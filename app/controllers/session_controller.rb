@@ -1,24 +1,43 @@
 class SessionController < ApplicationController
-
-  def index
-
+  #crud actions for session controller
+  # GET /session/new
+  def new
+    @session = Session.new
   end
 
+  # POST /session
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to root_path
-
+    @session = Session.new(params[:session])
+    if @session.save
+      flash[:notice] = "Successfully created session."
+      redirect_to @session
     else
-      redirect_to login
+      render :action => 'new'
     end
+  end
+
+  # GET /session/1
+  def show
+    @session = Session.find(params[:id])
 
   end
 
-  def destroy
-    session[:user_id] = nil
-    redirect_to root_path
+  # GET /session/1/edit
+  def edit
+    @session = Session.find(params[:id])
+
   end
+
+  # PUT /session/1
+  def update
+    @session = Session.find(params[:id])
+    if @session.update_attributes(params[:session])
+      flash[:notice] = "Successfully updated session."
+      redirect_to @session
+    else
+      render :action => 'edit'
+    end
+  end
+
 
 end
