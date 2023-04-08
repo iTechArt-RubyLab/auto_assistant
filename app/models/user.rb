@@ -17,6 +17,6 @@ class User < ApplicationRecord
       user.avatar_url = auth.info.image # assuming the user model has an image
     end
   end
-
+  has_many :cars
 end
 
