@@ -1,50 +1,50 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:show, :edit, :update, :destroy]
-
   def index
-    @cars = current_user.cars
+    @cars = Car.all
   end
 
   def show
+    @car = Car.find(params[:id])
   end
 
   def new
-    @car = current_user.cars.build
-  end
-
-  def edit
+    @car = Car.new
   end
 
   def create
-    @car = current_user.cars.build(car_params)
+    @car = Car.new(car_params)
 
     if @car.save
-      redirect_to @car, notice: 'Car was successfully created.'
+      redirect_to @car
     else
-      render :new
+      render 'new'
     end
   end
 
+  def edit
+    @car = Car.find(params[:id])
+  end
+
   def update
+    @car = Car.find(params[:id])
+
     if @car.update(car_params)
-      redirect_to @car, notice: 'Car was successfully updated.'
+      redirect_to @car
     else
-      render :edit
+      render 'edit'
     end
   end
 
   def destroy
+    @car = Car.find(params[:id])
     @car.destroy
-    redirect_to cars_url, notice: 'Car was successfully destroyed.'
+
+    redirect_to cars_path
   end
 
   private
-  def set_car
-    @car = current_user.cars.find(params[:id])
-  end
 
   def car_params
-    params.require(:car).permit(:make, :model, :year, :fuel_type, :engine_size, :transmission, :body_type, :mileage, :notes)
+    params.require(:car).permit(:make, :model, :year, :user_id)
   end
 end
-
