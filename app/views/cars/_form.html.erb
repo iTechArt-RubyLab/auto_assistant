@@ -1,25 +1,73 @@
 <%= form_for @car do |f| %>
-  <div>
+  <% if @car.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+        <% @car.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
     <%= f.label :make %>
     <%= f.text_field :make %>
   </div>
 
-  <div>
+  <div class="field">
     <%= f.label :model %>
     <%= f.text_field :model %>
   </div>
 
-  <div>
+  <div class="field">
     <%= f.label :year %>
     <%= f.number_field :year %>
   </div>
 
-  <div>
-    <%= f.label :user_id %>
-    <%= f.collection_select(:user_id, User.all, :id, :name) %>
+  <div class="field">
+    <%= f.label :fuel_type %>
+    <%= f.text_field :fuel_type %>
   </div>
 
-  <div>
+  <div class="field">
+    <%= f.label :engine_size %>
+    <%= f.text_field :engine_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :transmission %>
+    <%= f.text_field :transmission %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body_type %>
+    <%= f.text_field :body_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mileage %>
+    <%= f.number_field :mileage %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :email, prompt: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :service_id %>
+    <%= f.collection_select :service_id, Service.all, :id, :name, prompt: true %>
+  </div>
+
+  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

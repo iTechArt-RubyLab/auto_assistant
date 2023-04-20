@@ -10,9 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_13_170757) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_144337) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "author_type"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
+  end
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -28,6 +54,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_170757) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "service_id"
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.datetime "oil_change"
+    t.datetime "water_removal"
+    t.datetime "cabin_filter_change"
+    t.datetime "breaks_liquid_change"
+    t.datetime "freeze_liquid_change"
+    t.datetime "driving_belt_change"
+    t.datetime "chain_grm_change"
+    t.datetime "oil_filter_change"
+    t.datetime "air_filter_change"
+    t.string "registration_number"
+    t.datetime "ensuranse_expiration"
+    t.datetime "driver_lisence_expiration"
+    t.datetime "inspection"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "services", force: :cascade do |t|

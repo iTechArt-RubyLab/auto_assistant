@@ -1,8 +1,13 @@
 class CarsController < ApplicationController
   def index
-    @cars = @user ? current_user.cars : Car.all
-    @am_im_signed = user_signed_in?
-    @my_email = current_user.email
+    # my cars if user is signed in
+    if user_signed_in?
+      @cars = current_user.cars
+      @user = current_user.email
+    else
+      redirect_to new_user_session_path
+    end
+
   end
 
   def show
@@ -52,7 +57,7 @@ class CarsController < ApplicationController
 
   end
 
-  #get cars of authenticated user
+  # get cars of authenticated user
   def my_cars
     @cars = current_user.cars
     @user = current_user.email
