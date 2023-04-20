@@ -1,7 +1,7 @@
 <h1><%= @car.make %> <%= @car.model %></h1>
 
 <p>Year: <%= @car.year %></p>
-<p>User: <%= @car.user.name %></p>
+<p>User: <%= @car.user.email %></p>
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>

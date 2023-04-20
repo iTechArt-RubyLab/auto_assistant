@@ -1,10 +1,13 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    @cars = @user ? current_user.cars : Car.all
+    @am_im_signed = user_signed_in?
+    @my_email = current_user.email
   end
 
   def show
     @car = Car.find(params[:id])
+    # @cars = current_user.cars
   end
 
   def new
@@ -46,5 +49,13 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:make, :model, :year, :user_id)
+
+  end
+
+  #get cars of authenticated user
+  def my_cars
+    @cars = current_user.cars
+    @user = current_user.email
+
   end
 end

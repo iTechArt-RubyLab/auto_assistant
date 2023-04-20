@@ -1,4 +1,6 @@
 <h1>All Cars</h1>
+<%#= @am_im_signed %>
+<%= @my_email %>
 
 <table>
   <thead>
@@ -17,7 +19,7 @@
       <td><%= car.make %></td>
       <td><%= car.model %></td>
       <td><%= car.year %></td>
-      <td><%= car.user.name %></td>
+      <td><%= car.user.email %></td>
       <td>
         <%= link_to 'Show', car_path(car) %>
         <%= link_to 'Edit', edit_car_path(car) %>

@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "cars#index"
+  # root "cars#index"
   resources :cars
+  root "cars#index"
+  get '/my_cars', to: 'cars#my_cars', as: 'my_cars'
+
 
 end
