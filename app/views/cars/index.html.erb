@@ -1,33 +1,14 @@
-<h1><%= @user %>'s Cars</h1>
-<%#= @am_im_signed %>
-<%= @my_email %>
+<p style="color: green"><%= notice %></p>
 
-<table>
-  <thead>
-  <tr>
-    <th>Make</th>
-    <th>Model</th>
-    <th>Year</th>
-    <th>User</th>
-    <th>Actions</th>
-  </tr>
-  </thead>
+<h1>Cars</h1>
 
-  <tbody>
+<div id="cars">
   <% @cars.each do |car| %>
-    <tr>
-      <td><%= car.make %></td>
-      <td><%= car.model %></td>
-      <td><%= car.year %></td>
-      <td><%= car.user.email %></td>
-      <td>
-        <%= link_to 'Show', car_path(car) %>
-        <%= link_to 'Edit', edit_car_path(car) %>
-        <%= link_to 'Delete', car_path(car), method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
+    <%= render car %>
+    <p>
+      <%= link_to "Show this car", car %>
+    </p>
   <% end %>
-  </tbody>
-</table>
+</div>
 
-<%= link_to 'New Car', new_car_path %>
+<%= link_to "New car", new_car_path %>

@@ -1,73 +1,72 @@
-<%= form_for @car do |f| %>
-  <% if @car.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+<%= form_with(model: car) do |form| %>
+  <% if car.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
 
       <ul>
-        <% @car.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <% car.errors.each do |error| %>
+          <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :make %>
-    <%= f.text_field :make %>
+  <div>
+    <%= form.label :make, style: "display: block" %>
+    <%= form.text_field :make %>
   </div>
 
-  <div class="field">
-    <%= f.label :model %>
-    <%= f.text_field :model %>
+  <div>
+    <%= form.label :model, style: "display: block" %>
+    <%= form.text_field :model %>
   </div>
 
-  <div class="field">
-    <%= f.label :year %>
-    <%= f.number_field :year %>
+  <div>
+    <%= form.label :year, style: "display: block" %>
+    <%= form.number_field :year %>
   </div>
 
-  <div class="field">
-    <%= f.label :fuel_type %>
-    <%= f.text_field :fuel_type %>
+  <div>
+    <%= form.label :fuel_type, style: "display: block" %>
+    <%= form.text_field :fuel_type %>
   </div>
 
-  <div class="field">
-    <%= f.label :engine_size %>
-    <%= f.text_field :engine_size %>
+  <div>
+    <%= form.label :engine_size, style: "display: block" %>
+    <%= form.text_field :engine_size %>
   </div>
 
-  <div class="field">
-    <%= f.label :transmission %>
-    <%= f.text_field :transmission %>
+  <div>
+    <%= form.label :transmission, style: "display: block" %>
+    <%= form.text_field :transmission %>
   </div>
 
-  <div class="field">
-    <%= f.label :body_type %>
-    <%= f.text_field :body_type %>
+  <div>
+    <%= form.label :body_type, style: "display: block" %>
+    <%= form.text_field :body_type %>
   </div>
 
-  <div class="field">
-    <%= f.label :mileage %>
-    <%= f.number_field :mileage %>
+  <div>
+    <%= form.label :mileage, style: "display: block" %>
+    <%= form.number_field :mileage %>
   </div>
 
-  <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
+  <div>
+    <%= form.label :notes, style: "display: block" %>
+    <%= form.text_area :notes %>
   </div>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :email, prompt: true %>
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
   </div>
 
-  <div class="field">
-    <%= f.label :service_id %>
-    <%= f.collection_select :service_id, Service.all, :id, :name, prompt: true %>
+  <div>
+    <%= form.label :service_id, style: "display: block" %>
+    <%= form.text_field :service_id %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= form.submit %>
   </div>
 <% end %>
-

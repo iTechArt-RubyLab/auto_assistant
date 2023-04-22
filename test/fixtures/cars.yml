@@ -10,7 +10,8 @@ one:
   body_type: MyString
   mileage: 1
   notes: MyText
-  user_id: 1
+  user: one
+  service: one
 
 two:
   make: MyString
@@ -22,4 +23,5 @@ two:
   body_type: MyString
   mileage: 1
   notes: MyText
-  user_id: 1
+  user: two
+  service: two

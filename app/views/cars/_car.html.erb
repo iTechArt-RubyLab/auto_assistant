@@ -1,11 +1,57 @@
-<tr>
-  <td><%= car.make %></td>
-  <td><%= car.model %></td>
-  <td><%= car.year %></td>
-  <td><%= car.user.name %></td>
-  <td>
-    <%= link_to 'Show', car_path(car) %>
-    <%= link_to 'Edit', edit_car_path(car) %>
-    <%= link_to 'Delete', car_path(car), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </td>
-</tr>
+<div id="<%= dom_id car %>">
+  <p>
+    <strong>Make:</strong>
+    <%= car.make %>
+  </p>
+
+  <p>
+    <strong>Model:</strong>
+    <%= car.model %>
+  </p>
+
+  <p>
+    <strong>Year:</strong>
+    <%= car.year %>
+  </p>
+
+  <p>
+    <strong>Fuel type:</strong>
+    <%= car.fuel_type %>
+  </p>
+
+  <p>
+    <strong>Engine size:</strong>
+    <%= car.engine_size %>
+  </p>
+
+  <p>
+    <strong>Transmission:</strong>
+    <%= car.transmission %>
+  </p>
+
+  <p>
+    <strong>Body type:</strong>
+    <%= car.body_type %>
+  </p>
+
+  <p>
+    <strong>Mileage:</strong>
+    <%= car.mileage %>
+  </p>
+
+  <p>
+    <strong>Notes:</strong>
+    <%= car.notes %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= car.user_id %>
+  </p>
+
+  <p>
+    <strong>Service:</strong>
+    <%= car.service_id %>
+  </p>
+
+</div>

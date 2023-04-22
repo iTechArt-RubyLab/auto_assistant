@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_133117) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_22_133925) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_133117) do
     t.string "model"
     t.integer "year"
     t.string "fuel_type"
-    t.string "engine_size"
+    t.integer "engine_size"
     t.string "transmission"
     t.string "body_type"
     t.integer "mileage"

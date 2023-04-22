@@ -1,29 +1,10 @@
-<h1>Edit <%= @car.make %> <%= @car.model %></h1>
+<h1>Editing car</h1>
 
-<%= form_for @car do |f| %>
-  <div>
-    <%= f.label :make %>
-    <%= f.text_field :make %>
-  </div>
+<%= render "form", car: @car %>
 
-  <div>
-    <%= f.label :model %>
-    <%= f.text_field :model %>
-  </div>
+<br>
 
-  <div>
-    <%= f.label :year %>
-    <%= f.number_field :year %>
-  </div>
-
-  <div>
-    <%= f.label :user_id %>
-    <%= f.collection_select(:user_id, User.all, :id, :email) %>
-  </div>
-
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Cancel', car_path(@car) %>
+<div>
+  <%= link_to "Show this car", @car %> |
+  <%= link_to "Back to cars", cars_path %>
+</div>
