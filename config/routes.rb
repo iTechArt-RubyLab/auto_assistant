@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
-  # devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_scope :user do
+    get '/users/sign_out', to: 'devise/sessions#destroy'
+  end
   ActiveAdmin.routes(self)
   as :user do
     get 'login_admin', to: 'devise/sessions#new'
@@ -11,12 +13,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "cars#index"
-  resources :cars
-  resources :logs
+  resources :cars do
+    get 'log', on: :member
+  end
+
+
   root "cars#index"
   get '/my_cars', to: 'cars#my_cars', as: 'my_cars'
 

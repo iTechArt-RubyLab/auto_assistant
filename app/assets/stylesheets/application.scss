@@ -1,4 +1,37 @@
 @import "bootstrap";
 
+
+.car-actions {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.car-actions a,
+.car-actions input[type="submit"] {
+  padding: 8px 12px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.car-actions input[type="submit"].destroy-btn {
+  background-color: #f44336 !important;
+}
+
+.car-actions input[type="submit"].destroy-btn:hover {
+  background-color: #d32f2f !important;
+}
+
 /* Path: app/assets/stylesheets/application.scss */
 

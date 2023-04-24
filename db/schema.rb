@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_22_133925) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_23_152128) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,7 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_22_133925) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "service_id"
   end
 
   create_table "logs", force: :cascade do |t|
@@ -100,8 +99,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_22_133925) do
     t.string "provider"
     t.boolean "request_service_owner", default: false
     t.boolean "permission_to_become_service_owner", default: false
+    t.bigint "service_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["service_id"], name: "index_users_on_service_id"
   end
 
+  add_foreign_key "users", "services"
 end

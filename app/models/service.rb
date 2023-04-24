@@ -1,3 +1,3 @@
 class Service < ApplicationRecord
-  has_many :cars
+  belongs_to :user
 end
