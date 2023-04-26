@@ -1,18 +1,26 @@
 class LogsController < ApplicationController
-  before_action :set_log, only: %i[ show edit update destroy ]
+  before_action :set_log, only: %i[ edit update destroy ]
 
   # GET /logs or /logs.json
+  #
   def index
     @logs = Log.all
   end
 
   # GET /logs/1 or /logs/1.json
   def show
+    @car = Car.find(params[:car_id])
+    @log = @car.log
+
+    if @log.nil?
+      redirect_to new_car_log_path(@car)
+    end
   end
 
   # GET /logs/new
   def new
-    @log = Log.new
+    @car = Car.find(params[:car_id])
+    @log = @car.build_log
   end
 
   # GET /logs/1/edit
@@ -20,20 +28,28 @@ class LogsController < ApplicationController
   end
 
   # POST /logs or /logs.json
+  # def create
+  #   @log = Log.new(log_params)
+  #
+  #   respond_to do |format|
+  #     if @log.save
+  #       format.html { redirect_to log_url(@log), notice: "Log was successfully created." }
+  #       format.json { render :show, status: :created, location: @log }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @log.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
   def create
-    @log = Log.new(log_params)
-
-    respond_to do |format|
-      if @log.save
-        format.html { redirect_to log_url(@log), notice: "Log was successfully created." }
-        format.json { render :show, status: :created, location: @log }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @log.errors, status: :unprocessable_entity }
-      end
+    @car = Car.find(params[:car_id])
+    @log = @car.build_log(log_params)
+    if @log.save
+      redirect_to car_log_path(@car, @log)
+    else
+      render :'cars/index'
     end
   end
-
   # PATCH/PUT /logs/1 or /logs/1.json
   def update
     respond_to do |format|
@@ -58,13 +74,14 @@ class LogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_log
-      @log = Log.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def log_params
-      params.require(:log).permit(:oil_change, :water_removal, :cabin_filter_change, :breaks_liquid_change, :freeze_liquid_change, :driving_belt_change, :chain_grm_change, :oil_filter_change, :air_filter_change, :registration_number, :ensuranse_expiration, :driver_lisence_expiration, :inspection)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_log
+    @log = Log.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def log_params
+    params.require(:log).permit(:oil_change, :water_removal, :cabin_filter_change, :breaks_liquid_change, :freeze_liquid_change, :driving_belt_change, :chain_grm_change, :oil_filter_change, :air_filter_change, :registration_number, :ensuranse_expiration, :driver_lisence_expiration, :inspection)
+  end
 end

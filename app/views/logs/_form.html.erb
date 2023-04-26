@@ -1,82 +1,82 @@
 <%= form_with(model: log) do |form| %>
   <% if log.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(log.errors.count, "error") %> prohibited this log from being saved:</h2>
+    <div id="error_explanation">
+      <h2><%= pluralize(log.errors.count, "error") %> prohibited this car from being saved:</h2>
 
       <ul>
-        <% log.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% log.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :oil_change, style: "display: block" %>
-    <%= form.datetime_field :oil_change %>
+  <div class="form-group">
+    <%= form.label :oil_change %>
+    <%= form.datetime_select :oil_change, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :water_removal, style: "display: block" %>
-    <%= form.datetime_field :water_removal %>
+  <div class="form-group">
+    <%= form.label :water_removal %>
+    <%= form.datetime_select :water_removal, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :cabin_filter_change, style: "display: block" %>
-    <%= form.datetime_field :cabin_filter_change %>
+  <div class="form-group">
+    <%= form.label :cabin_filter_change %>
+    <%= form.datetime_select :cabin_filter_change, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :breaks_liquid_change, style: "display: block" %>
-    <%= form.datetime_field :breaks_liquid_change %>
+  <div class="form-group">
+    <%= form.label :breaks_liquid_change %>
+    <%= form.datetime_select :breaks_liquid_change, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :freeze_liquid_change, style: "display: block" %>
-    <%= form.datetime_field :freeze_liquid_change %>
+  <div class="form-group">
+    <%= form.label :freeze_liquid_change %>
+    <%= form.datetime_select :freeze_liquid_change, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :driving_belt_change, style: "display: block" %>
-    <%= form.datetime_field :driving_belt_change %>
+  <div class="form-group">
+    <%= form.label :driving_belt_change %>
+    <%= form.datetime_select :driving_belt_change, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :chain_grm_change, style: "display: block" %>
-    <%= form.datetime_field :chain_grm_change %>
+  <div class="form-group">
+    <%= form.label :chain_grm_change %>
+    <%= form.datetime_select :chain_grm_change, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :oil_filter_change, style: "display: block" %>
-    <%= form.datetime_field :oil_filter_change %>
+  <div class="form-group">
+    <%= form.label :oil_filter_change %>
+    <%= form.datetime_select :oil_filter_change, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :air_filter_change, style: "display: block" %>
-    <%= form.datetime_field :air_filter_change %>
+  <div class="form-group">
+    <%= form.label :air_filter_change %>
+    <%= form.datetime_select :air_filter_change, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :registration_number, style: "display: block" %>
-    <%= form.text_field :registration_number %>
+  <div class="form-group">
+    <%= form.label :registration_number %>
+    <%= form.text_field :registration_number, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :ensuranse_expiration, style: "display: block" %>
-    <%= form.datetime_field :ensuranse_expiration %>
+  <div class="form-group">
+    <%= form.label :ensuranse_expiration %>
+    <%= form.datetime_select :ensuranse_expiration, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :driver_lisence_expiration, style: "display: block" %>
-    <%= form.datetime_field :driver_lisence_expiration %>
+  <div class="form-group">
+    <%= form.label :driver_lisence_expiration %>
+    <%= form.datetime_select :driver_lisence_expiration, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :inspection, style: "display: block" %>
-    <%= form.datetime_field :inspection %>
+  <div class="form-group">
+    <%= form.label :inspection %>
+    <%= form.datetime_select :inspection, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

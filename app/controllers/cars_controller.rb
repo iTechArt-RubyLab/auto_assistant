@@ -1,23 +1,25 @@
 class CarsController < InheritedResources::Base
 
   private
+
   def log
     @car = Car.find(params[:id])
     @log = @car.log || @car.build_log
   end
-    # show cars of only the current user if logged in or redirect to login page
+
   def collection
     if current_user
       @cars = current_user.cars
       @current_user = current_user.email
-      @log = Log.new
     else
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path and return
+
     end
   end
-    def car_params
-      params.require(:car).permit(:make, :model, :year, :fuel_type, :engine_size, :transmission, :body_type, :mileage, :notes, :user_id, :service_id)
-    end
+
+  def car_params
+    params.require(:car).permit(:make, :model, :year, :fuel_type, :engine_size, :transmission, :body_type, :mileage, :notes, :user_id, :service_id)
+  end
 
 end
 

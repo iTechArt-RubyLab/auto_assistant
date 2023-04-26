@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   as :user do
     get 'login_admin', to: 'devise/sessions#new'
   end
-  resources :logs
+  # resources :logs
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     sessions: 'users/sessions',
@@ -15,12 +16,10 @@ Rails.application.routes.draw do
   }
 
   resources :cars do
+    resource :log, only: [:show, :new, :create, :edit, :update, :destroy]
     get 'log', on: :member
   end
-
-
+  resources :logs
   root "cars#index"
-  get '/my_cars', to: 'cars#my_cars', as: 'my_cars'
-
 
 end

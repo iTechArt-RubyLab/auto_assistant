@@ -1,0 +1,8 @@
+<h1>Log for <%= @car.name %></h1>
+
+<% if @log.persisted? %>
+  <%= render 'logs/show', log: @log %>
+<% else %>
+  <p>No log exists for this car.</p>
+  <%= link_to 'Create Log', new_car_log_path(@car) %>
+<% end %>
