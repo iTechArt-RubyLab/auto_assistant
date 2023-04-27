@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :cars
-  has_one :service
+  has_one :service, dependent: :nullify
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

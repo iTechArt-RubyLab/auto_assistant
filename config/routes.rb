@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :services
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy'
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     get 'log', on: :member
   end
   resources :logs
+  resources :services
   root "cars#index"
 
 end

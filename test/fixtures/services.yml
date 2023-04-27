@@ -4,8 +4,12 @@ one:
   name: MyString
   email: MyString
   password_digest: MyString
+  contact: MyString
+  service_type: MyText
 
 two:
   name: MyString
   email: MyString
   password_digest: MyString
+  contact: MyString
+  service_type: MyText
