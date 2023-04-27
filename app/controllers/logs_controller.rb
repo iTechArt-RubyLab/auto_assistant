@@ -82,6 +82,12 @@ class LogsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def log_params
-    params.require(:log).permit(:oil_change, :water_removal, :cabin_filter_change, :breaks_liquid_change, :freeze_liquid_change, :driving_belt_change, :chain_grm_change, :oil_filter_change, :air_filter_change, :registration_number, :ensuranse_expiration, :driver_lisence_expiration, :inspection)
+    params.require(:log).permit(
+      :oil_change, :water_removal, :cabin_filter_change,
+      :breaks_liquid_change, :freeze_liquid_change, :driving_belt_change,
+      :chain_grm_change, :oil_filter_change, :air_filter_change,
+      :registration_number, :ensuranse_expiration, :driver_lisence_expiration,
+      :inspection, :car_id
+    )
   end
 end

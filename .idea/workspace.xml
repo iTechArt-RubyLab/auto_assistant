@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70f1f1c7-57c4-4fc7-8811-433e633c34cb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/cars_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cars_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/logs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/logs_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cars/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cars/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cars/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cars/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cars/log.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cars/log.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/logs/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/logs/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/logs/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/logs/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +198,8 @@
       <workItem from="1682340482930" duration="2520000" />
       <workItem from="1682343643935" duration="3848000" />
       <workItem from="1682435812110" duration="134000" />
-      <workItem from="1682508294204" duration="3454000" />
+      <workItem from="1682508294204" duration="5080000" />
+      <workItem from="1682599095964" duration="1121000" />
     </task>
     <servers />
   </component>
