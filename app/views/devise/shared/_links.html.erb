@@ -26,10 +26,10 @@
                  url: omniauth_authorize_path(resource_name, provider),
                  method: :post,
                  data: {turbo: "false"} do |f| %>
-      <%= f.submit "Login", type: "image", :class =>"class1", :style => "height: 50px, width: 50px", src: url_for("https://onymos.com/wp-content/uploads/2020/10/google-signin-button.png") %>
+      <%= f.submit "Login", type: "image", :class =>"goggle-image-sign", src: url_for("https://onymos.com/wp-content/uploads/2020/10/google-signin-button.png") %>
     <% end %>
 
 
-    <%= button_to  'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, :data => {turbo: "false"} %>     <% end %>
-<% end %>
+    <%= button_to  'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, :data => {turbo: "false"}, :class => "hide-default-button"%>     <% end %>
+<%  end %>
 <!--#{OmniAuth::Utils.camelize(provider)}-->

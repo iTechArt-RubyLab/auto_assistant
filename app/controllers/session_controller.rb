@@ -12,7 +12,7 @@ class SessionController < ApplicationController
       flash[:notice] = "Successfully created session."
       redirect_to @session
     else
-      render :action => 'new'
+      render :action => 'new' and return
     end
   end
 

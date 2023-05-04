@@ -20,8 +20,9 @@ Rails.application.routes.draw do
     resource :log, only: [:show, :new, :create, :edit, :update, :destroy]
     get 'log', on: :member
   end
-  resources :logs
+
   resources :services
+  resources :logs
   root "cars#index"
 
 end

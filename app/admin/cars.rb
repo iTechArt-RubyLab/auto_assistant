@@ -5,7 +5,7 @@ ActiveAdmin.register Car do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :make, :model, :year, :fuel_type, :engine_size, :transmission, :body_type, :mileage, :notes, :user_id, :service_id
+  permit_params :make, :model, :year, :fuel_type, :engine_size, :transmission, :body_type, :mileage, :notes, :user_id
   #
   # or
   #

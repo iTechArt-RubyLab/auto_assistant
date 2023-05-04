@@ -3,9 +3,6 @@ class User < ApplicationRecord
   has_one :service, dependent: :nullify
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-
-  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 

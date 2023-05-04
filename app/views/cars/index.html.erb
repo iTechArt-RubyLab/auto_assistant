@@ -1,7 +1,7 @@
 <!-- app/views/cars/index.html.erb -->
 
 <!-- Navbar -->
-
+<% if @current_user %>
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -23,7 +23,8 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>        </li>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
       </ul>
     </div>
 
@@ -33,7 +34,7 @@
 
 <!-- Page content -->
 <div class="container mt-5">
-  <h1 class="text-center mb-5"><%= @current_user %> 's  Car Collection</h1>
+  <h1 class="text-center mb-5"><%= @current_user %> 's Car Collection</h1>
 
   <div class="row">
     <% @cars.each do |car| %>
@@ -51,11 +52,11 @@
             <p class="card-text"><strong>Mileage:</strong> <%= car.mileage %></p>
             <p class="card-text"><strong>Notes:</strong> <%= car.notes %></p>
             <p class="card-text"><strong>User:</strong> <%= car.user.email %></p>
-<!--            <p class="card-text"><strong>Service:</strong> <%#= car.service.name %></p>-->
+            <!--            <p class="card-text"><strong>Service:</strong> <%#= car.service.name %></p>-->
             <div class="d-flex justify-content-between mt-3">
               <%= link_to 'Show', car, class: 'btn btn-primary' %>
               <div>
-<!--                add button to create log object-->
+                <!--                add button to create log object-->
                 <%= link_to 'View Log', car_log_path(car), class: 'btn btn-info mr-2' %>
 
 
@@ -81,3 +82,8 @@
 </div>
 
 <%= t(:hello_world) %>
+<% else %>
+<script>
+  fetch(`/users/sign_in`);
+</script>
+<% end %>
