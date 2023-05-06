@@ -50,13 +50,18 @@
               <p class="card-text"><strong>Mileage:</strong> <%= car.mileage %></p>
               <p class="card-text"><strong>Notes:</strong> <%= car.notes %></p>
               <p class="card-text"><strong>User:</strong> <%= car.user.email %></p>
-              <!--            <p class="card-text"><strong>Service:</strong> <%#= car.service.name %></p>-->
+
               <div class="d-flex justify-content-between mt-3">
                 <%= link_to 'Show', car, class: 'btn btn-primary' %>
                 <div>
-                  <!--                add button to create log object-->
 
-                  <%= link_to 'View Log ', new_log_path(car_id: car.id), class: 'btn btn-info mr-2' %>
+
+                  <% if car.log.nil? %>
+                    <%= link_to "Create Log", new_log_path(car_id: car.id), class: 'btn btn-info mr-2' %>
+                  <% else %>
+                    <%= link_to "View Log", log_path(car.log), class: 'btn btn-info mr-2' %>
+                  <% end %>
+                  <%#= link_to 'View Log ', new_log_path(car_id: car.id),%>
 
 
                   <%= link_to 'Edit', edit_car_path(car), class: 'btn btn-secondary mr-2' %>

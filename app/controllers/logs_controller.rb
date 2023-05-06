@@ -8,13 +8,10 @@ class LogsController < ApplicationController
   end
 
   # GET /logs/1 or /logs/1.json
-  def show
-    @car = Car.find(params[:car_id])
-    @log = @car.log
 
-    if @log.nil?
-      redirect_to new_car_log_path(@car)
-    end
+  def show
+    @log = Log.find(params[:id])
+    @car = @log.car
   end
 
   # GET /logs/new
