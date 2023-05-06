@@ -2,88 +2,88 @@
 
 <!-- Navbar -->
 <% if @current_user %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <%= link_to 'My Car Collection', root_path, class: 'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      logout button
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to 'New Car', new_car_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <%= link_to 'My Car Collection', root_path, class: 'navbar-brand' %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    logout button
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to 'New Car', new_car_path, class: 'nav-link' %>
-        </li>
-      </ul>
     </div>
+  </nav>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-        </li>
-      </ul>
-    </div>
+  <!-- Page content -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-5"><%= @current_user %> 's Car Collection</h1>
 
-
-  </div>
-</nav>
-
-<!-- Page content -->
-<div class="container mt-5">
-  <h1 class="text-center mb-5"><%= @current_user %> 's Car Collection</h1>
-
-  <div class="row">
-    <% @cars.each do |car| %>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-header bg-secondary text-white">
-            <%= car.make %> <%= car.model %>
-          </div>
-          <div class="card-body">
-            <p class="card-text"><strong>Year:</strong> <%= car.year %></p>
-            <p class="card-text"><strong>Fuel Type:</strong> <%= car.fuel_type %></p>
-            <p class="card-text"><strong>Engine Size:</strong> <%= car.engine_size %></p>
-            <p class="card-text"><strong>Transmission:</strong> <%= car.transmission %></p>
-            <p class="card-text"><strong>Body Type:</strong> <%= car.body_type %></p>
-            <p class="card-text"><strong>Mileage:</strong> <%= car.mileage %></p>
-            <p class="card-text"><strong>Notes:</strong> <%= car.notes %></p>
-            <p class="card-text"><strong>User:</strong> <%= car.user.email %></p>
-            <!--            <p class="card-text"><strong>Service:</strong> <%#= car.service.name %></p>-->
-            <div class="d-flex justify-content-between mt-3">
-              <%= link_to 'Show', car, class: 'btn btn-primary' %>
-              <div>
-                <!--                add button to create log object-->
-                <%= link_to 'View Log', car_log_path(car), class: 'btn btn-info mr-2' %>
+    <div class="row">
+      <% @cars.each do |car| %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-header bg-secondary text-white">
+              <%= car.make %> <%= car.model %>
+            </div>
+            <div class="card-body">
+              <p class="card-text"><strong>Year:</strong> <%= car.year %></p>
+              <p class="card-text"><strong>Fuel Type:</strong> <%= car.fuel_type %></p>
+              <p class="card-text"><strong>Engine Size:</strong> <%= car.engine_size %></p>
+              <p class="card-text"><strong>Transmission:</strong> <%= car.transmission %></p>
+              <p class="card-text"><strong>Body Type:</strong> <%= car.body_type %></p>
+              <p class="card-text"><strong>Mileage:</strong> <%= car.mileage %></p>
+              <p class="card-text"><strong>Notes:</strong> <%= car.notes %></p>
+              <p class="card-text"><strong>User:</strong> <%= car.user.email %></p>
+              <!--            <p class="card-text"><strong>Service:</strong> <%#= car.service.name %></p>-->
+              <div class="d-flex justify-content-between mt-3">
+                <%= link_to 'Show', car, class: 'btn btn-primary' %>
+                <div>
+                  <!--                add button to create log object-->
+                  <%= link_to 'View Log', car_log_path(car), class: 'btn btn-info mr-2' %>
 
 
-                <%= link_to 'Edit', edit_car_path(car), class: 'btn btn-secondary mr-2' %>
-                <%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                  <%= link_to 'Edit', edit_car_path(car), class: 'btn btn-secondary mr-2' %>
+                  <%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
+    </div>
+
+    <% if @cars.empty? %>
+      <p class="text-center mt-5">No cars found. <%= link_to 'Create one', new_car_path %></p>
     <% end %>
   </div>
 
-  <% if @cars.empty? %>
-    <p class="text-center mt-5">No cars found. <%= link_to 'Create one', new_car_path %></p>
-  <% end %>
-</div>
 
+  <div class="language-switcher">
+    <%= link_to "English", url_for(locale: "en") %>
+    <%= link_to "Español", url_for(locale: "es") %>
+  </div>
 
-<div class="language-switcher">
-  <%= link_to "English", url_for(locale: "en") %>
-  <%= link_to "Español", url_for(locale: "es") %>
-</div>
-
-<%= t(:hello_world) %>
+  <%= t(:hello_world) %>
 <% else %>
-<script>
-  fetch(`/users/sign_in`);
-</script>
+
+  <script type="text/javascript">
+      window.location.href = "/users/sign_in"
+  </script>
+
 <% end %>

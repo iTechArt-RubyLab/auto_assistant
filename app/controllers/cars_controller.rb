@@ -11,8 +11,7 @@ class CarsController < InheritedResources::Base
     if current_user
       @cars = current_user.cars
       @current_user = current_user.email
-    else
-      redirect_to new_user_session_path and return
+
 
     end
   end
