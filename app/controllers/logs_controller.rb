@@ -30,19 +30,14 @@ class LogsController < ApplicationController
   # POST /logs or /logs.json
   def create
     @car = Car.find(params[:car_id])
-
-    @log = Log.new(log_params)
-
-    respond_to do |format|
-      if @log.save
-        format.html { redirect_to log_url(@log), notice: "Log was successfully created." }
-        format.json { render :show, status: :created, location: @log }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @log.errors, status: :unprocessable_entity }
-      end
+    @log = @car.build_log(log_params)
+    if @log.save
+      redirect_to @car, notice: "Log was successfully created."
+    else
+      render :new
     end
   end
+
   # def create
   #   @log = @car.build_log(log_params)
   #   if @log.save

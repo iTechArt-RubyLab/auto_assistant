@@ -1,4 +1,4 @@
-<%= form_with(model: log) do |form| %>
+<%= form_with(model: [@car, @log], url: car_log_path(@car, @log), method: :post) do |form| %>
   <% if log.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(log.errors.count, "error") %> prohibited this car from being saved:</h2>
