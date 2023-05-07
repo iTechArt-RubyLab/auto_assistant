@@ -8,7 +8,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
-
+  # def create
+  #   super do |resource|
+  #     resource.request_service_owner = params[:user][:request_service_owner] # Access the checkbox value here
+  #
+  #     # Custom code to handle the checkbox value
+  #
+  #     # Example: Perform some action based on checkbox value
+  #     if resource.request_service_owner
+  #       # Do something if the checkbox is checked
+  #     else
+  #       # Do something if the checkbox is not checked
+  #     end
+  #   end
+  # end
   # POST /resource
   # def create
   #   super

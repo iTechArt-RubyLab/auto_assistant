@@ -1,7 +1,22 @@
 <!-- app/views/cars/index.html.erb -->
+<script>
+    function showPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
 
+    function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    function submitForm() {
+
+        hidePopup();
+    }
+</script>
 <!-- Navbar -->
-<% if @current_user %>
+<% if @current_user_email %>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <%= link_to 'My Car Collection', root_path, class: 'navbar-brand' %>
@@ -21,6 +36,23 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <%= link_to "English", url_for(locale: "en"), class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to "Español", url_for(locale: "es"), class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
         </ul>
@@ -30,9 +62,42 @@
     </div>
   </nav>
 
+
+
+
+
+
+
+
+
+  <button onclick="showPopup()">My service</button>
+
+  <div id="popup" class="popup">
+    <h2>Service</h2>
+
+    <% if @permitted_to_own_service and @service_exists%>
+    <%= link_to "View my service", services_path, class: "btn btn-success" %>
+      <% elsif  @permitted_to_own_service and not @service_exists%>
+    <%= link_to "Create new service", new_service_path, class: "btn btn-success"%>
+      <%else %>
+      <h1>You don't have permission to own a service</h1>
+    <% end %>
+
+    <button class="btn btn-danger" onclick="hidePopup()">Close</button>
+  </div>
+
+
+
+
+
+
+
+
+
+
   <!-- Page content -->
   <div class="container mt-5">
-    <h1 class="text-center mb-5"><%= @current_user %> 's Car Collection</h1>
+    <h1 class="text-center mb-5"><%= @current_user_email %> 's Car Collection</h1>
 
     <div class="row">
       <% @cars.each do |car| %>
@@ -81,8 +146,7 @@
 
 
   <div class="language-switcher">
-    <%= link_to "English", url_for(locale: "en") %>
-    <%= link_to "Español", url_for(locale: "es") %>
+
   </div>
 
   <%= t(:hello_world) %>

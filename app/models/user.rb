@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :request_service_owner
+
   has_many :cars
   has_one :service, dependent: :nullify
 

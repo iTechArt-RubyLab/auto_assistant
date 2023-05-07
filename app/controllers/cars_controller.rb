@@ -9,8 +9,12 @@ class CarsController < InheritedResources::Base
 
   def collection
     if current_user
+      @service_exists = current_user.service_id
       @cars = current_user.cars
-      @current_user = current_user.email
+      @current_user_email = current_user.email
+      @permitted_to_own_service = current_user.permission_to_become_service_owner
+      # @has_service = current_user.service.id
+
 
 
     end

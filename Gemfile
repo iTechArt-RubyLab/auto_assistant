@@ -63,6 +63,12 @@ gem "omniauth-rails_csrf_protection"
 
 gem 'omniauth-github'
 
+gem 'aws-sdk-s3'
+
+gem "image_processing", "~> 1.2"
+
+gem 'cleanup'
+
 
 gem 'pundit'
 
@@ -79,6 +85,8 @@ group :development, :test do
 end
 
 group :development do
+  # gem 'milio'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
