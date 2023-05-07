@@ -1,2 +1,6 @@
 es:
-  hello_world: "¡Hola, Mundo!"
+  cars:
+    index:
+      hello_world: "¡Hola, Mundo!"
+      car_collection: "Colección de coches"
+

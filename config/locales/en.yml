@@ -28,6 +28,8 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  cars:
+    index:
+      hello_world: "Hello world"
+      car_collection: "Car collection"

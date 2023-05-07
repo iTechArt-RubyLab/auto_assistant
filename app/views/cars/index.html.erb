@@ -80,7 +80,7 @@
       <% elsif  @permitted_to_own_service and not @service_exists%>
     <%= link_to "Create new service", new_service_path, class: "btn btn-success"%>
       <%else %>
-      <h1>You don't have permission to own a service</h1>
+      <h3>You don't have permission to own a service</h3>
     <% end %>
 
     <button class="btn btn-danger" onclick="hidePopup()">Close</button>
@@ -97,7 +97,7 @@
 
   <!-- Page content -->
   <div class="container mt-5">
-    <h1 class="text-center mb-5"><%= @current_user_email %> 's Car Collection</h1>
+    <h1 class="text-center mb-5"><%= @current_user_email %> 's <%= t('.car_collection') %></h1>
 
     <div class="row">
       <% @cars.each do |car| %>
@@ -145,11 +145,9 @@
   </div>
 
 
-  <div class="language-switcher">
 
-  </div>
 
-  <%= t(:hello_world) %>
+
 <% else %>
 
   <script type="text/javascript">
