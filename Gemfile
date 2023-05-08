@@ -74,6 +74,10 @@ gem 'simple_form'
 
 gem 'pundit'
 
+gem 'rails-jquery-autocomplete'
+
+
+gem 'acts-as-taggable-on'
 
 
 
