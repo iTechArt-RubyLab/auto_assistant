@@ -19,7 +19,7 @@
 <% if @current_user_email %>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <%= link_to 'My Car Collection', root_path, class: 'navbar-brand' %>
+      <%= link_to  t('.my_car_collection') , root_path, class: 'navbar-brand' %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to 'New Car', new_car_path, class: 'nav-link' %>
+            <%= link_to t('.new_car'), new_car_path, class: 'nav-link' %>
           </li>
         </ul>
       </div>
@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to "English", url_for(locale: "en"), class: 'nav-link' %>
+            <%= link_to t('.english'), url_for(locale: "en"), class: 'nav-link' %>
           </li>
         </ul>
       </div>
@@ -44,7 +44,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to "Español", url_for(locale: "es"), class: 'nav-link' %>
+            <%= link_to t('.spanish'), url_for(locale: "es"), class: 'nav-link' %>
           </li>
         </ul>
       </div>
@@ -53,7 +53,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
         </ul>
       </div>
@@ -70,20 +70,20 @@
 
 
 
-  <button onclick="showPopup()">My service</button>
+  <button onclick="showPopup()"><%= t('.my_service') %></button>
 
   <div id="popup" class="popup">
-    <h2>Service</h2>
+    <h2><%= t('.service') %></h2>
 
     <% if @permitted_to_own_service and @service_exists%>
-    <%= link_to "View my service", services_path, class: "btn btn-success" %>
+    <%= link_to t('.view_my_service'), services_path, class: "btn btn-success" %>
       <% elsif  @permitted_to_own_service and not @service_exists%>
-    <%= link_to "Create new service", new_service_path, class: "btn btn-success"%>
+    <%= link_to t('.create_new_service'), new_service_path, class: "btn btn-success"%>
       <%else %>
-      <h3>You don't have permission to own a service</h3>
+      <h3><%= t('.permission') %></h3>
     <% end %>
 
-    <button class="btn btn-danger" onclick="hidePopup()">Close</button>
+    <button class="btn btn-danger" onclick="hidePopup()"><%= t('.close') %></button>
   </div>
 
 
@@ -107,30 +107,30 @@
               <%= car.make %> <%= car.model %>
             </div>
             <div class="card-body">
-              <p class="card-text"><strong>Year:</strong> <%= car.year %></p>
-              <p class="card-text"><strong>Fuel Type:</strong> <%= car.fuel_type %></p>
-              <p class="card-text"><strong>Engine Size:</strong> <%= car.engine_size %></p>
-              <p class="card-text"><strong>Transmission:</strong> <%= car.transmission %></p>
-              <p class="card-text"><strong>Body Type:</strong> <%= car.body_type %></p>
-              <p class="card-text"><strong>Mileage:</strong> <%= car.mileage %></p>
-              <p class="card-text"><strong>Notes:</strong> <%= car.notes %></p>
-              <p class="card-text"><strong>User:</strong> <%= car.user.email %></p>
+              <p class="card-text"><strong><%= t('.Year') %>:</strong> <%= car.year %></p>
+              <p class="card-text"><strong><%= t('.Fuel Type') %>:</strong> <%= car.fuel_type %></p>
+              <p class="card-text"><strong><%= t('.Engine Size') %>:</strong> <%= car.engine_size %></p>
+              <p class="card-text"><strong><%= t('.Transmission') %>:</strong> <%= car.transmission %></p>
+              <p class="card-text"><strong><%= t('.Body Type') %>:</strong> <%= car.body_type %></p>
+              <p class="card-text"><strong><%= t('.Mileage') %>:</strong> <%= car.mileage %></p>
+              <p class="card-text"><strong><%= t('.Notes') %>:</strong> <%= car.notes %></p>
+              <p class="card-text"><strong><%= t('.User') %>:</strong> <%= car.user.email %></p>
 
               <div class="d-flex justify-content-between mt-3">
-                <%= link_to 'Show', car, class: 'btn btn-primary' %>
+                <%= link_to t('.show'), car, class: 'btn btn-primary' %>
                 <div>
 
 
                   <% if car.log.nil? %>
-                    <%= link_to "Create Log", new_log_path(car_id: car.id), class: 'btn btn-info mr-2' %>
+                    <%= link_to t('.create_log'), new_log_path(car_id: car.id), class: 'btn btn-info mr-2' %>
                   <% else %>
-                    <%= link_to "View Log", log_path(car.log), class: 'btn btn-info mr-2' %>
+                    <%= link_to t('.view_log'), log_path(car.log), class: 'btn btn-info mr-2' %>
                   <% end %>
                   <%#= link_to 'View Log ', new_log_path(car_id: car.id),%>
 
 
-                  <%= link_to 'Edit', edit_car_path(car), class: 'btn btn-secondary mr-2' %>
-                  <%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                  <%= link_to t('.edit'), edit_car_path(car), class: 'btn btn-secondary mr-2' %>
+                  <%= link_to t('.delete'), car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
                 </div>
               </div>
             </div>

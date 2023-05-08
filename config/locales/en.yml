@@ -33,3 +33,31 @@ en:
     index:
       hello_world: "Hello world"
       car_collection: "Car collection"
+      service: "Service"
+      my_car_collection: "My Car Collection"
+      new_car: "New car"
+      english: "English"
+      spanish: "Spanish"
+      logout: "Logout"
+      Year: "Year"
+      Fuel Type: "Feul Type"
+      Engine Size: "Engine Size"
+      Transmission: "Transmission"
+      Body Type: "Body Type"
+      Mileage: "Mileage"
+      Notes: "Notes"
+      User: "User"
+      show: "Show"
+      create_log: "Create Log"
+      view_log: "View Log"
+      edit: "Edit"
+      delete: "Delete"
+      permission: "You don't have permission to own a service"
+      view_my_service: "View my service"
+      create_new_service: "Create new service"
+      my_service: "My service"
+      close: "Close"
+
+
+
+
