@@ -1,3 +1,5 @@
+
+
 <%= form_with(model: service) do |form| %>
   <% if service.errors.any? %>
     <div style="color: red">
@@ -31,10 +33,15 @@
     <%= form.text_field :contact %>
   </div>
 
+<!--  <div>-->
+    <%#= form.text_field :service_type_list, id: 'service_type', data: { autocomplete_source: autocomplete_service_types_path } %>
+<!--  </div>-->
+
   <div>
     <%= form.label :service_type, style: "display: block" %>
     <%= form.text_area :service_type %>
   </div>
+
 
   <div>
     <%= form.submit %>

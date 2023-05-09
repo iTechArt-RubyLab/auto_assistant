@@ -22,6 +22,7 @@ class LogsController < ApplicationController
 
   # GET /logs/1/edit
   def edit
+    @log = Log.find(params[:id])
   end
 
   # POST /logs or /logs.json
@@ -29,6 +30,9 @@ class LogsController < ApplicationController
     @car = Car.find(params[:car_id])
     @log = @car.build_log(log_params)
     if @log.save
+      ExpiryNotificationWorkerJob.perform_in((@log.ensuranse_expiration - 1.month).beginning_of_day, @log.id)
+      ExpiryNotificationWorkerJob.perform_in((@log.driver_lisence_expiration - 1.month).beginning_of_day, @log.id)
+
       redirect_to @car, notice: "Log was successfully created."
     else
       render :new
@@ -47,6 +51,9 @@ class LogsController < ApplicationController
   def update
     respond_to do |format|
       if @log.update(log_params)
+        ExpiryNotificationWorkerJob.perform_in((@log.ensuranse_expiration - 1.month).beginning_of_day, @log.id)
+        ExpiryNotificationWorkerJob.perform_in((@log.driver_lisence_expiration - 1.month).beginning_of_day, @log.id)
+
         format.html { redirect_to log_url(@log), notice: "Log was successfully updated." }
         format.json { render :show, status: :ok, location: @log }
       else

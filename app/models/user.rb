@@ -2,7 +2,10 @@ class User < ApplicationRecord
   attr_accessor :request_service_owner
 
   has_many :cars
-  has_one :service, dependent: :nullify
+
+  belongs_to :service
+  accepts_nested_attributes_for :service
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,

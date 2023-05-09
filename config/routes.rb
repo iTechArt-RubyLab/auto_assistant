@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   resources :services
   resources :logs
+  get 'autocomplete/service_types', to: 'autocomplete#service_types', as: 'autocomplete_service_types'
+
   root "cars#index"
 
 end

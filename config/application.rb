@@ -1,6 +1,14 @@
 require_relative "boot"
 
 require "rails/all"
+# require 'sidekiq/web'
+#
+# config.active_job.queue_adapter = :sidekiq
+#
+# # Optionally, if you want to secure Sidekiq's web interface with authentication
+# config.middleware.use Rack::Auth::Basic do |username, password|
+#   username == 'admin' && password == 'password'
+# end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -29,3 +37,5 @@ module AutoAssistant
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+# ces#create
+# GET        /services/new(.:format)                                                                           servi
