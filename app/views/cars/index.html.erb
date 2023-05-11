@@ -1,0 +1,157 @@
+<!-- app/views/cars/index.html.erb -->
+<script>
+    function showPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    function submitForm() {
+
+        hidePopup();
+    }
+</script>
+<!-- Navbar -->
+<% if @current_user_email %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <%= link_to  t('.my_car_collection') , root_path, class: 'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      logout button
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to t('.new_car'), new_car_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to t('.english'), url_for(locale: "en"), class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to t('.spanish'), url_for(locale: "es"), class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+  <button onclick="showPopup()"><%= t('.my_service') %></button>
+
+  <div id="popup" class="popup">
+    <h2><%= t('.service') %></h2>
+
+    <% if @permitted_to_own_service and @service_exists%>
+    <%= link_to t('.view_my_service'), services_path, class: "btn btn-success" %>
+      <% elsif  @permitted_to_own_service and not @service_exists%>
+    <%= link_to t('.create_new_service'), new_service_path, class: "btn btn-success"%>
+      <%else %>
+      <h3><%= t('.permission') %></h3>
+    <% end %>
+
+    <button class="btn btn-danger" onclick="hidePopup()"><%= t('.close') %></button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!-- Page content -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-5"><%= @current_user_email %> 's <%= t('.car_collection') %></h1>
+
+    <div class="row">
+      <% @cars.each do |car| %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-header bg-secondary text-white">
+              <%= car.make %> <%= car.model %>
+            </div>
+            <div class="card-body">
+              <p class="card-text"><strong><%= t('.Year') %>:</strong> <%= car.year %></p>
+              <p class="card-text"><strong><%= t('.Fuel Type') %>:</strong> <%= car.fuel_type %></p>
+              <p class="card-text"><strong><%= t('.Engine Size') %>:</strong> <%= car.engine_size %></p>
+              <p class="card-text"><strong><%= t('.Transmission') %>:</strong> <%= car.transmission %></p>
+              <p class="card-text"><strong><%= t('.Body Type') %>:</strong> <%= car.body_type %></p>
+              <p class="card-text"><strong><%= t('.Mileage') %>:</strong> <%= car.mileage %></p>
+              <p class="card-text"><strong><%= t('.Notes') %>:</strong> <%= car.notes %></p>
+              <p class="card-text"><strong><%= t('.User') %>:</strong> <%= car.user.email %></p>
+
+              <div class="d-flex justify-content-between mt-3">
+                <%= link_to t('.show'), car, class: 'btn btn-primary' %>
+                <div>
+
+
+                  <% if car.log.nil? %>
+                    <%= link_to t('.create_log'), new_log_path(car_id: car.id), class: 'btn btn-info mr-2' %>
+                  <% else %>
+                    <%= link_to t('.view_log'), log_path(car.log), class: 'btn btn-info mr-2' %>
+                  <% end %>
+                  <%#= link_to 'View Log ', new_log_path(car_id: car.id),%>
+
+
+                  <%= link_to t('.edit'), edit_car_path(car), class: 'btn btn-secondary mr-2' %>
+                  <%= link_to t('.delete'), car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <% if @cars.empty? %>
+      <p class="text-center mt-5">No cars found. <%= link_to 'Create one', new_car_path %></p>
+    <% end %>
+  </div>
+
+
+
+
+
+<% else %>
+
+  <script type="text/javascript">
+      window.location.href = "/users/sign_in"
+  </script>
+
+<% end %>

@@ -1,0 +1,90 @@
+<!--<div id="<%#= dom_id car %>">-->
+<!--  <p>-->
+<!--    <strong>Make:</strong>-->
+    <%#= car.make %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Model:</strong>-->
+    <%#= car.model %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Year:</strong>-->
+    <%#= car.year %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Fuel type:</strong>-->
+    <%#= car.fuel_type %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Engine size:</strong>-->
+    <%#= car.engine_size %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Transmission:</strong>-->
+    <%#= car.transmission %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Body type:</strong>-->
+    <%#= car.body_type %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Mileage:</strong>-->
+    <%#= car.mileage %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Notes:</strong>-->
+    <%#= car.notes %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>User:</strong>-->
+    <%#= car.user_id %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Service:</strong>-->
+    <%#= car.service_id %>
+<!--  </p>-->
+
+<!--</div>-->
+<%# app/views/cars/show.html.erb %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-header bg-dark text-light">
+          <h5 class="mb-0 text-center"><%= @car.make %> <%= @car.model %> Details</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Year:</strong> <%= @car.year %></p>
+              <p><strong>Fuel Type:</strong> <%= @car.fuel_type %></p>
+              <p><strong>Engine Size:</strong> <%= @car.engine_size %></p>
+              <p><strong>Transmission:</strong> <%= @car.transmission %></p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>Body Type:</strong> <%= @car.body_type %></p>
+              <p><strong>Mileage:</strong> <%= @car.mileage %></p>
+              <p><strong>Notes:</strong> <%= @car.notes %></p>
+              <p><strong>User:</strong> <%= @car.user.email %></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <%= link_to 'Edit', edit_car_path(@car), class: 'btn btn-warning' %>
+          <%= link_to 'Back', cars_path, class: 'btn btn-secondary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
