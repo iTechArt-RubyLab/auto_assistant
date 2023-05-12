@@ -1,6 +1,10 @@
 class ServicesController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @services = Service.all
 
+
+  end
   def new
     @service = Service.new
   end
@@ -41,7 +45,7 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:name, :email, :password_digest, :contact, :service_type
+    params.require(:service).permit(:name, :email, :password_digest, :contact, :service_type, :tag_list
                                                                                    )
   end
 end

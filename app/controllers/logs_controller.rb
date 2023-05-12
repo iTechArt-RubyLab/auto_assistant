@@ -22,7 +22,8 @@ class LogsController < ApplicationController
 
   # GET /logs/1/edit
   def edit
-    @log = Log.find(params[:id])
+    # @car = Car.find(params[:car_id])
+    @log = Log.find(params[:log_id])
   end
 
   # POST /logs or /logs.json

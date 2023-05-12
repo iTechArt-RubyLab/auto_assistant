@@ -9,4 +9,10 @@ class Service < ApplicationRecord
     end
 
   end
+
+  def refuel(car, next_visit="year")
+    if car.log
+      car.log.patrol = Date.today
+    end
+  end
 end

@@ -40,8 +40,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.0.4.3, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.4.3, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.4.3, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="acts-as-taggable-on (v9.0.1, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.4, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arbre (v1.5.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="autoprefixer-rails (v10.4.13.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.2.0, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -56,7 +55,7 @@
     <orderEntry type="library" scope="PROVIDED" name="bootstrap (v5.1.3, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.1, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="capybara (v3.38.0, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="capybara (v3.39.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cleanup (v0.1.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.2.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.4.0, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -82,7 +81,7 @@
     <orderEntry type="library" scope="PROVIDED" name="importmap-rails (v1.1.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="inherited_resources (v1.13.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="io-console (v0.6.0, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="irb (v1.6.3, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="irb (v1.6.4, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.5.1, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -107,8 +106,8 @@
     <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.3.4, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.3.3, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.8, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.14.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.9, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.14.3, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="oauth2 (v2.0.9, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth (v2.1.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-github (v2.0.1, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -128,7 +127,6 @@
     <orderEntry type="library" scope="PROVIDED" name="rails (v7.0.4.3, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.5.0, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-jquery-autocomplete (v1.0.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v7.0.4.3, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ransack (v3.2.1, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -183,168 +181,76 @@
   <component name="RailsGeneratorsCache">
     <option name="generators">
       <list>
-        <option value="active_admin:assets" />
-        <option value="active_admin:devise" />
-        <option value="active_admin:install" />
-        <option value="active_admin:page" />
-        <option value="active_admin:resource" />
-        <option value="active_admin:webpacker" />
-        <option value="active_record:application_record" />
-        <option value="active_record:devise" />
-        <option value="active_record:multi_db" />
-        <option value="application_record" />
-        <option value="autocomplete:install" />
-        <option value="autocomplete:uncompressed" />
-        <option value="benchmark" />
-        <option value="channel" />
+        <option value="active_record:migration" />
+        <option value="active_record:model" />
+        <option value="active_record:observer" />
+        <option value="active_record:session_migration" />
         <option value="controller" />
-        <option value="devise" />
-        <option value="devise:controllers" />
-        <option value="devise:install" />
-        <option value="devise:views" />
-        <option value="formtastic:form" />
-        <option value="formtastic:input" />
-        <option value="formtastic:install" />
+        <option value="erb:controller" />
+        <option value="erb:mailer" />
+        <option value="erb:scaffold" />
         <option value="generator" />
         <option value="helper" />
-        <option value="inherited_resources_controller" />
         <option value="integration_test" />
-        <option value="jbuilder" />
-        <option value="job" />
-        <option value="kaminari:config" />
-        <option value="kaminari:views" />
-        <option value="mailbox" />
         <option value="mailer" />
+        <option value="metal" />
         <option value="migration" />
         <option value="model" />
-        <option value="mongoid:devise" />
-        <option value="pundit:install" />
-        <option value="pundit:policy" />
+        <option value="model_subclass" />
+        <option value="observer" />
+        <option value="performance_test" />
+        <option value="plugin" />
         <option value="resource" />
-        <option value="responders:install" />
-        <option value="responders_controller" />
-        <option value="rspec:channel" />
-        <option value="rspec:controller" />
-        <option value="rspec:feature" />
-        <option value="rspec:generator" />
-        <option value="rspec:helper" />
-        <option value="rspec:install" />
-        <option value="rspec:integration" />
-        <option value="rspec:job" />
-        <option value="rspec:mailbox" />
-        <option value="rspec:mailer" />
-        <option value="rspec:model" />
-        <option value="rspec:policy" />
-        <option value="rspec:request" />
-        <option value="rspec:scaffold" />
-        <option value="rspec:system" />
-        <option value="rspec:view" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
-        <option value="scss:assets" />
-        <option value="scss:scaffold" />
-        <option value="sidekiq:job" />
-        <option value="simple_form:install" />
-        <option value="stimulus" />
-        <option value="system_test" />
-        <option value="task" />
-        <option value="test_unit:channel" />
+        <option value="session_migration" />
+        <option value="stylesheets" />
         <option value="test_unit:controller" />
-        <option value="test_unit:generator" />
         <option value="test_unit:helper" />
-        <option value="test_unit:install" />
         <option value="test_unit:integration" />
-        <option value="test_unit:job" />
-        <option value="test_unit:mailbox" />
         <option value="test_unit:mailer" />
         <option value="test_unit:model" />
+        <option value="test_unit:observer" />
+        <option value="test_unit:performance" />
         <option value="test_unit:plugin" />
-        <option value="test_unit:policy" />
         <option value="test_unit:scaffold" />
-        <option value="test_unit:system" />
       </list>
     </option>
     <option name="myGenerators">
       <list>
-        <option value="active_admin:assets" />
-        <option value="active_admin:devise" />
-        <option value="active_admin:install" />
-        <option value="active_admin:page" />
-        <option value="active_admin:resource" />
-        <option value="active_admin:webpacker" />
-        <option value="active_record:application_record" />
-        <option value="active_record:devise" />
-        <option value="active_record:multi_db" />
-        <option value="application_record" />
-        <option value="autocomplete:install" />
-        <option value="autocomplete:uncompressed" />
-        <option value="benchmark" />
-        <option value="channel" />
+        <option value="active_record:migration" />
+        <option value="active_record:model" />
+        <option value="active_record:observer" />
+        <option value="active_record:session_migration" />
         <option value="controller" />
-        <option value="devise" />
-        <option value="devise:controllers" />
-        <option value="devise:install" />
-        <option value="devise:views" />
-        <option value="formtastic:form" />
-        <option value="formtastic:input" />
-        <option value="formtastic:install" />
+        <option value="erb:controller" />
+        <option value="erb:mailer" />
+        <option value="erb:scaffold" />
         <option value="generator" />
         <option value="helper" />
-        <option value="inherited_resources_controller" />
         <option value="integration_test" />
-        <option value="jbuilder" />
-        <option value="job" />
-        <option value="kaminari:config" />
-        <option value="kaminari:views" />
-        <option value="mailbox" />
         <option value="mailer" />
+        <option value="metal" />
         <option value="migration" />
         <option value="model" />
-        <option value="mongoid:devise" />
-        <option value="pundit:install" />
-        <option value="pundit:policy" />
+        <option value="model_subclass" />
+        <option value="observer" />
+        <option value="performance_test" />
+        <option value="plugin" />
         <option value="resource" />
-        <option value="responders:install" />
-        <option value="responders_controller" />
-        <option value="rspec:channel" />
-        <option value="rspec:controller" />
-        <option value="rspec:feature" />
-        <option value="rspec:generator" />
-        <option value="rspec:helper" />
-        <option value="rspec:install" />
-        <option value="rspec:integration" />
-        <option value="rspec:job" />
-        <option value="rspec:mailbox" />
-        <option value="rspec:mailer" />
-        <option value="rspec:model" />
-        <option value="rspec:policy" />
-        <option value="rspec:request" />
-        <option value="rspec:scaffold" />
-        <option value="rspec:system" />
-        <option value="rspec:view" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
-        <option value="scss:assets" />
-        <option value="scss:scaffold" />
-        <option value="sidekiq:job" />
-        <option value="simple_form:install" />
-        <option value="stimulus" />
-        <option value="system_test" />
-        <option value="task" />
-        <option value="test_unit:channel" />
+        <option value="session_migration" />
+        <option value="stylesheets" />
         <option value="test_unit:controller" />
-        <option value="test_unit:generator" />
         <option value="test_unit:helper" />
-        <option value="test_unit:install" />
         <option value="test_unit:integration" />
-        <option value="test_unit:job" />
-        <option value="test_unit:mailbox" />
         <option value="test_unit:mailer" />
         <option value="test_unit:model" />
+        <option value="test_unit:observer" />
+        <option value="test_unit:performance" />
         <option value="test_unit:plugin" />
-        <option value="test_unit:policy" />
         <option value="test_unit:scaffold" />
-        <option value="test_unit:system" />
       </list>
     </option>
   </component>
@@ -390,21 +296,6 @@
                 </subtasks>
               </RakeTaskImpl>
               <RakeTaskImpl description="" fullCommand="active_storage:update" id="update" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="acts_as_taggable_on_engine">
-            <subtasks>
-              <RakeTaskImpl id="install">
-                <subtasks>
-                  <RakeTaskImpl description="Copy migrations from acts_as_taggable_on_engine to application" fullCommand="acts_as_taggable_on_engine:install:migrations" id="migrations" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="tag_names">
-                <subtasks>
-                  <RakeTaskImpl description="Forcing collate of tag names to utf8_bin" fullCommand="acts_as_taggable_on_engine:tag_names:collate_bin" id="collate_bin" />
-                  <RakeTaskImpl description="Forcing collate of tag names to utf8_general_ci" fullCommand="acts_as_taggable_on_engine:tag_names:collate_ci" id="collate_ci" />
-                </subtasks>
-              </RakeTaskImpl>
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl id="app">
@@ -559,6 +450,14 @@
           <RakeTaskImpl description="Restart app by touching tmp/restart.txt" fullCommand="restart" id="restart" />
           <RakeTaskImpl description="Generate a cryptographically secure secret key (this is typically used to generate a secret for cookie sessions)" fullCommand="secret" id="secret" />
           <RakeTaskImpl description="Run all specs in spec directory (excluding plugin specs)" fullCommand="spec" id="spec" />
+          <RakeTaskImpl id="spec">
+            <subtasks>
+              <RakeTaskImpl description="Run the code examples in spec/mailers" fullCommand="spec:mailers" id="mailers" />
+              <RakeTaskImpl description="Run the code examples in spec/sidekiq" fullCommand="spec:sidekiq" id="sidekiq" />
+              <RakeTaskImpl description="" fullCommand="spec:prepare" id="prepare" />
+              <RakeTaskImpl description="" fullCommand="spec:statsetup" id="statsetup" />
+            </subtasks>
+          </RakeTaskImpl>
           <RakeTaskImpl description="Report code statistics (KLOCs, etc) from the application or engine" fullCommand="stats" id="stats" />
           <RakeTaskImpl id="stimulus">
             <subtasks>
@@ -673,12 +572,6 @@
                   <RakeTaskImpl description="" fullCommand="railties:install:migrations" id="migrations" />
                 </subtasks>
               </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="spec">
-            <subtasks>
-              <RakeTaskImpl description="" fullCommand="spec:prepare" id="prepare" />
-              <RakeTaskImpl description="" fullCommand="spec:statsetup" id="statsetup" />
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl description="" fullCommand="tmp" id="tmp" />
