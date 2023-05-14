@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
     session[:locale] = I18n.locale
   end
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:service_id])
+  end
+
 end

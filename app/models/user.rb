@@ -1,9 +1,8 @@
 class User < ApplicationRecord
-  attr_accessor :request_service_owner
 
   has_many :cars
 
-  belongs_to :service
+  belongs_to :service, optional: true
   accepts_nested_attributes_for :service
 
 
@@ -18,6 +17,11 @@ class User < ApplicationRecord
       user.full_name = auth.info.name # assuming the user model has a name
       user.avatar_url = auth.info.image # assuming the user model has an image
     end
+  end
+
+  private
+  def set_default_service
+    self.service_id ||= nil
   end
 
 end

@@ -11,6 +11,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <div>
   <br class="field">
     <%= f.label "Request service ownership"%></br>
     <%= f.check_box :request_service_owner %>
@@ -28,6 +29,10 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div>
+  <%= f.hidden_field :service_id, value: nil %>
   </div>
 
   <div class="actions">

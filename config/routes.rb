@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tags
   resources :services
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_scope :user do

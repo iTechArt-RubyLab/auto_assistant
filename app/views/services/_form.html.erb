@@ -37,9 +37,13 @@
     <%#= form.text_field :service_type_list, id: 'service_type', data: { autocomplete_source: autocomplete_service_types_path } %>
 <!--  </div>-->
 
-  <div class="field">
-    <%= form.label :service_type %>
-    <%= form.text_field :service_type_list, id: 'service_type_list', data: { delimiter: ',' } %>
+<!--  <div class="field">-->
+    <%#= form.label :service_type %>
+    <%#= form.text_field :service_type_list, id: 'service_type_list', data: { delimiter: ',' } %>
+<!--  </div>-->
+  <div>
+    <%= form.label :tag, style: "display: block"  %>
+    <%= form.text_field :tags, value: service.tags.map(&:name).join(",") %>
   </div>
 
 

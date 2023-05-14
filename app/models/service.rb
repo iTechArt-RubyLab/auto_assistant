@@ -1,4 +1,7 @@
 class Service < ApplicationRecord
+  has_many :taggables, dependent: :destroy
+  has_many :tags, through: :taggables
+
   # acts_as_taggable_on :service_types
 
 
