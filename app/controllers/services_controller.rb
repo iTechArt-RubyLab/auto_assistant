@@ -24,7 +24,7 @@ class ServicesController < ApplicationController
 
 
     if @service
-      if @service.update(service_params)
+      if @service.update(service_params.except(:tags))
         redirect_to @service, notice: 'Service was successfully updated.'
       else
         render :edit
@@ -35,7 +35,7 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.new(service_params)
+    @service = Service.new(service_params.except(:tags))
     create_or_delete_services_tags(@service, params[:service][:tags])
     # @service.user = current_user
 
@@ -49,8 +49,8 @@ class ServicesController < ApplicationController
 
   def create_or_delete_services_tags(service, tags)
     service.taggables.destroy_all
-    tags = tags.strip.split(',')
-    tags.each do |tag|
+    new_tags = tags.split(',')
+    new_tags.each do |tag|
       service.tags << Tag.find_or_create_by(name: tag)
     end
 

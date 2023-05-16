@@ -21,7 +21,11 @@
 
   <p>
     <strong>Service type:</strong>
-    <%= service.service_type %>
+    <% service.tags.each do |tag| %>
+      <%= link_to tag, style:"text-decoration:none" do %>
+        <span class="tag"><%= tag.name.capitalize.gsub!('_', '   ') %></span>
+      <% end %>
+    <% end %>
   </p>
 
 </div>
