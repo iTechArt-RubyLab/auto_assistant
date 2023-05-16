@@ -30,7 +30,6 @@ gem "jbuilder"
 
 gem "sidekiq"
 
-
 gem 'activeadmin'
 
 
