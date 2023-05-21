@@ -1,25 +1,6 @@
 class Service < ApplicationRecord
   has_many :taggables, dependent: :destroy
   has_many :tags, through: :taggables
-
-  # acts_as_taggable_on :service_types
-
-  # t.datetime "oil_change"
-  # t.datetime "water_removal"
-  # t.datetime "cabin_filter_change"
-  # t.datetime "breaks_liquid_change"
-  # t.datetime "freeze_liquid_change"
-  # t.datetime "driving_belt_change"
-  # t.datetime "chain_grm_change"
-  # t.datetime "oil_filter_change"
-  # t.datetime "air_filter_change"
-  # t.string "registration_number"
-  # t.datetime "ensuranse_expiration"
-  # t.datetime "driver_lisence_expiration"
-  # t.datetime "inspection"
-  # t.datetime "created_at", null: false
-  # t.datetime "updated_at", null: false
-  # t.integer "car_id"
   has_one :user
   def oil_change(car, next_visit=1.year.since(Time.now))
     if car.log

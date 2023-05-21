@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70f1f1c7-57c4-4fc7-8811-433e633c34cb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/auto_assistant--1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/auto_assistant--1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/logs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/logs_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/services_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/services_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/cars_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cars_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/service.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/work.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/work.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cars/_car.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cars/_car.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cars/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cars/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/cars/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cars/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/logs/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/logs/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/services/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/services/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cars/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cars/new.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +270,7 @@
       <workItem from="1684235459258" duration="9102000" />
       <workItem from="1684417144606" duration="3467000" />
       <workItem from="1684425521571" duration="3826000" />
-      <workItem from="1684692910211" duration="618000" />
+      <workItem from="1684692910211" duration="3176000" />
     </task>
     <servers />
   </component>
