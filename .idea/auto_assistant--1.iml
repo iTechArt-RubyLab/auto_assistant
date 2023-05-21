@@ -191,6 +191,8 @@
         <option value="active_record:devise" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
+        <option value="autocomplete:install" />
+        <option value="autocomplete:uncompressed" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
@@ -272,6 +274,8 @@
         <option value="active_record:devise" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
+        <option value="autocomplete:install" />
+        <option value="autocomplete:uncompressed" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />

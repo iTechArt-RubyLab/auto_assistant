@@ -19,15 +19,23 @@
   <div>
     <h3><%= service.name %></h3>
     <p>Email: <%= service.email %></p>
-<!--    <ul>-->
-      <%# service.service_type.each do |element| %>
-<!--        <li><%#= element %></li>-->
-      <%# end %>
-<!--    </ul>-->
+    <% if service.tags.exists?(name: 'oil_change') %>
+      <% oil_change = service.functions.find_by(name: 'oil_change') %>
+      <form>
+        <label>Oil Quantity:</label>
+        <input type="text" name="quantity" value="<%= oil_change.car %>">
 
-  </div>
+        <label>Oil Type:</label>
+        <input type="date" name="type" value="<%= oil_change.next_visit %>">
+
+        <!-- Add more form inputs for other parameters -->
+
+        <input type="submit" value="Update">
+      </form>
+    <% end %>
 <% end %>
 
 
 
 
+</div>
