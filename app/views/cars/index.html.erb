@@ -76,15 +76,28 @@
     <h2><%= t('.service') %></h2>
 
     <% if @permitted_to_own_service and @service_exists%>
-    <%= link_to t('.view_my_service'), services_path, class: "btn btn-success" %>
+    <%= link_to t('.view_my_service'), service_path(@service_exists), class: "btn btn-success" %>
       <% elsif  @permitted_to_own_service and not @service_exists%>
-    <%= link_to t('.create_new_service'), new_service_path, class: "btn btn-success"%>
+    <%= link_to t('.create_new_service'), new_service_path, method: :post, class: "btn btn-success"%>
       <%else %>
       <h3><%= t('.permission') %></h3>
     <% end %>
 
     <button class="btn btn-danger" onclick="hidePopup()"><%= t('.close') %></button>
   </div>
+
+
+
+  <div>
+<!--    <h2><%#= t('.all_services') %></h2>-->
+
+    <%= link_to  t('.all_services'), services_path, class: "btn btn-accepted" %>
+
+<!--    <button class="btn btn-danger" onclick="hidePopup()"><%#= t('.close') %></button>-->
+  </div>
+
+
+
 
 
 

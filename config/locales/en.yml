@@ -52,11 +52,12 @@ en:
       view_log: "View Log"
       edit: "Edit"
       delete: "Delete"
-      permission: "You don't have permission to own a service"
+      permission: "You don't have a permission to own a service"
       view_my_service: "View my service"
       create_new_service: "Create new service"
       my_service: "My service"
       close: "Close"
+      all_services: "All services"
 
 
 

@@ -1,4 +1,6 @@
 @import "bootstrap";
+//@import 'jquery-ui';
+
 .goggle-image-sign{
   height: 50px;
   width: 170px;
@@ -68,6 +70,15 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998;
+}
+
+.tag {
+  background:#0045c6;
+  color:#FFF;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.80em;
+  display: inline-block;
 }
 
 /* Path: app/assets/stylesheets/application.scss */

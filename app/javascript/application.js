@@ -5,6 +5,8 @@ import "controllers"
 
 
 //= require bootstrap
+//= require jquery-ui/widgets/autocomplete
+
 
 
 
