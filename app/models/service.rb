@@ -3,7 +3,7 @@ class Service < ApplicationRecord
   has_many :tags, through: :taggables
   has_one :user
   def oil_change(car, next_visit=1.year.since(Time.now))
-    if car.log
+    if Log.where(car_id: car.id).empty?
       car.log.oil_change = Date.today
       Work.create(car_id: car.id,service_work: "oil change", next_appointment: next_visit)
     end

@@ -4,10 +4,16 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :car_id %>
-    <%= f.input :service_work %>
-    <%= f.input :next_appointment %>
-  </div>
+    <%= f.label :service_name %>
+    <%= f.text_field :service_name, value: params[:service_name], disabled: true %>
+    <%= f.label :car_id %>
+    <%= f.collection_select :car_id, @user_cars, :id, :make, prompt: true %>
+    <%= f.label :service_work %>
+    <%= f.text_field :service_work, value: params[:tag_name], disabled: true %>
+
+    <%= f.label :next_appointment %>
+    <% default_date = 1.year.from_now %>
+    <%= f.datetime_select :next_appointment, default: default_date, min: Time.now %>  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>

@@ -1,41 +1,41 @@
 <!--<p style="color: green"><%#= notice %></p>-->
 
-<!--<h1>Services</h1>-->
-
-<!--<div id="services">-->
-  <%# @services.each do |service| %>
-    <%#= render service %>
-<!--    <p>-->
-      <%#= link_to "Show this service", service %>
-<!--    </p>-->
-  <%# end %>
-<!--</div>-->
-
-<%#= link_to "New service", new_service_path %>
-
 <h1>Services</h1>
 
-<% @services.each do |service| %>
-  <div>
-    <h3><%= service.name %></h3>
-    <p>Email: <%= service.email %></p>
-    <% if service.tags.exists?(name: 'oil_change') %>
-      <% oil_change = service.functions.find_by(name: 'oil_change') %>
-      <form>
-        <label>Oil Quantity:</label>
-        <input type="text" name="quantity" value="<%= oil_change.car %>">
+<div id="services">
+  <% @services.each do |service| %>
+    <div id="<%= dom_id service %>">
+      <p>
+        <strong>Name:</strong>
+        <%= service.name %>
+      </p>
 
-        <label>Oil Type:</label>
-        <input type="date" name="type" value="<%= oil_change.next_visit %>">
+      <p>
+        <strong>Email:</strong>
+        <%= service.email %>
+      </p>
 
-        <!-- Add more form inputs for other parameters -->
+      <p>
+        <strong>Password digest:</strong>
+        <%= service.password_digest %>
+      </p>
 
-        <input type="submit" value="Update">
-      </form>
-    <% end %>
+      <p>
+        <strong>Contact:</strong>
+        <%= service.contact %>
+      </p>
+
+      <p>
+        <strong>Service type:</strong>
+        <% service.tags.each do |tag| %>
+          <%= link_to new_work_path(tag_name: tag.name, service_name: service.name), style:"text-decoration:none" do %>
+            <span class="tag"><%= tag.name.capitalize.gsub!('_', '   ') %></span>
+          <% end %>
+        <% end %>
+      </p>
+
+    </div>
+
 <% end %>
-
-
-
-
 </div>
+

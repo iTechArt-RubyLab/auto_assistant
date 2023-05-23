@@ -1,4 +1,9 @@
 class WorksController < InheritedResources::Base
+  def new
+    @user_cars = current_user.cars
+    @work = Work.new
+    super
+  end
 
   private
 

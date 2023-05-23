@@ -1,6 +1,11 @@
 <div id="<%= dom_id work %>">
   <p>
-    <strong>Car:</strong>
+    <strong>Service name</strong>
+    <%= work.service_name %>
+  </p>
+
+  <p>
+    <strong>Choose car:</strong>
     <%= work.car_id %>
   </p>
 
@@ -13,5 +18,7 @@
     <strong>Next appointment:</strong>
     <%= work.next_appointment %>
   </p>
+
+
 
 </div>
