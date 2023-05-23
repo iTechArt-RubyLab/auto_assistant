@@ -33,6 +33,8 @@ gem "sidekiq"
 gem 'activeadmin'
 
 
+
+
 gem 'sass-rails'
 
 

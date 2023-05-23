@@ -1,33 +1,40 @@
 <!--<p style="color: green"><%#= notice %></p>-->
 
-<!--<h1>Services</h1>-->
+<h1 class="mb-4">Services</h1>
 
-<!--<div id="services">-->
-  <%# @services.each do |service| %>
-    <%#= render service %>
-<!--    <p>-->
-      <%#= link_to "Show this service", service %>
-<!--    </p>-->
-  <%# end %>
-<!--</div>-->
+<div id="services">
+  <% @services.each do |service| %>
+    <div id="<%= dom_id service %>" class="service card border-primary mb-4">
+      <div class="card-body custom-card-body">
+        <h5 class="card-title">Name: <%= service.name %></h5>
 
-<%#= link_to "New service", new_service_path %>
+        <p class="card-text">
+          <strong>Email:</strong>
+          <%= service.email %>
+        </p>
 
-<h1>Services</h1>
+        <p class="card-text">
+          <strong>Password digest:</strong>
+          <%= service.password_digest %>
+        </p>
 
-<% @services.each do |service| %>
-  <div>
-    <h3><%= service.name %></h3>
-    <p>Email: <%= service.email %></p>
-<!--    <ul>-->
-      <%# service.service_type.each do |element| %>
-<!--        <li><%#= element %></li>-->
-      <%# end %>
-<!--    </ul>-->
+        <p class="card-text">
+          <strong>Contact:</strong>
+          <%= service.contact %>
+        </p>
 
-  </div>
-<% end %>
-
-
-
-
+        <p class="card-text">
+          <strong>Service type:</strong>
+          <% if service.tags.any? %>
+            <% service.tags.each do |tag| %>
+              <%= link_to new_work_path(tag_name: tag.name, service_name: service.name), style: "text-decoration:none", class: "tag-link btn btn-outline-primary mr-2 mb-2" do %>
+                <%= tag.name.capitalize.gsub!('_', '   ') %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to "Back to home", cars_path, class: "btn btn-primary" %>

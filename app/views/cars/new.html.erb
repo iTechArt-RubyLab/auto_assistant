@@ -1,7 +1,75 @@
 <h1 style="text-align: center">New car</h1>
 
-<%= render "form", car: @car %>
+<%#= render "form", car: @car %>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for @car, html: { class: 'form' } do |form| %>
+      <% if @car.errors.any? %>
+        <div class="alert alert-danger">
+          <ul>
+            <% @car.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
+      <div class="form-group">
+        <%= form.label :make %>
+        <%= form.text_field :make, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :model %>
+        <%= form.text_field :model, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :year %>
+        <%= form.number_field :year, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :fuel_type %>
+        <%= form.text_field :fuel_type, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :engine_size %>
+        <%= form.text_field :engine_size, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :transmission %>
+        <%= form.text_field :transmission, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :body_type %>
+        <%= form.text_field :body_type, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :mileage %>
+        <%= form.number_field :mileage, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :notes %>
+        <%= form.text_area :notes, class: "form-control" %>
+      </div>
+
+      <div>
+        <%= form.hidden_field :user_id, value: @user_id %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Create", class: "btn btn-primary" %>
+        <%= link_to "Back", cars_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 <br>
 
 
