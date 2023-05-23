@@ -6,17 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="70f1f1c7-57c4-4fc7-8811-433e633c34cb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/works_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/works_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/service.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/policies/car_policy.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/policies/user_policy.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cars/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cars/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/services/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/services/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/works/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/works/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/works/_work.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/works/_work.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/works/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/works/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/tag_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/tag_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +309,7 @@
       <workItem from="1684692910211" duration="3350000" />
       <workItem from="1684827992538" duration="1141000" />
       <workItem from="1684829154235" duration="3281000" />
-      <workItem from="1684843657359" duration="1598000" />
+      <workItem from="1684843657359" duration="6755000" />
     </task>
     <servers />
   </component>

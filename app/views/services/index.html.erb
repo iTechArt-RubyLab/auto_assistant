@@ -1,41 +1,40 @@
 <!--<p style="color: green"><%#= notice %></p>-->
 
-<h1>Services</h1>
+<h1 class="mb-4">Services</h1>
 
 <div id="services">
   <% @services.each do |service| %>
-    <div id="<%= dom_id service %>">
-      <p>
-        <strong>Name:</strong>
-        <%= service.name %>
-      </p>
+    <div id="<%= dom_id service %>" class="service card border-primary mb-4">
+      <div class="card-body custom-card-body">
+        <h5 class="card-title">Name: <%= service.name %></h5>
 
-      <p>
-        <strong>Email:</strong>
-        <%= service.email %>
-      </p>
+        <p class="card-text">
+          <strong>Email:</strong>
+          <%= service.email %>
+        </p>
 
-      <p>
-        <strong>Password digest:</strong>
-        <%= service.password_digest %>
-      </p>
+        <p class="card-text">
+          <strong>Password digest:</strong>
+          <%= service.password_digest %>
+        </p>
 
-      <p>
-        <strong>Contact:</strong>
-        <%= service.contact %>
-      </p>
+        <p class="card-text">
+          <strong>Contact:</strong>
+          <%= service.contact %>
+        </p>
 
-      <p>
-        <strong>Service type:</strong>
-        <% service.tags.each do |tag| %>
-          <%= link_to new_work_path(tag_name: tag.name, service_name: service.name), style:"text-decoration:none" do %>
-            <span class="tag"><%= tag.name.capitalize.gsub!('_', '   ') %></span>
+        <p class="card-text">
+          <strong>Service type:</strong>
+          <% if service.tags.any? %>
+            <% service.tags.each do |tag| %>
+              <%= link_to new_work_path(tag_name: tag.name, service_name: service.name), style: "text-decoration:none", class: "tag-link btn btn-outline-primary mr-2 mb-2" do %>
+                <%= tag.name.capitalize.gsub!('_', '   ') %>
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
-      </p>
-
+        </p>
+      </div>
     </div>
-
-<% end %>
+  <% end %>
 </div>
-
+<%= link_to "Back to home", cars_path, class: "btn btn-primary" %>
