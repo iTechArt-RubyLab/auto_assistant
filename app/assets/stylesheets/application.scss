@@ -1,4 +1,6 @@
 @import "bootstrap";
+//@import 'jquery-ui';
+
 .goggle-image-sign{
   height: 50px;
   width: 170px;
@@ -69,6 +71,29 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998;
 }
+
+.tag {
+  background: greenyellow;
+  color:#FFF;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.80em;
+  display: inline-block;
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #ff9f00 0%, #ff5820 51%, #d62976 100%);
+  color: #fff;
+}
+body {
+  background: linear-gradient(to right, #56ab2f, #a8e063);
+}
+
+.custom-card-body{
+  background: #fff200;
+}
+
+
 
 /* Path: app/assets/stylesheets/application.scss */
 

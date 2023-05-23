@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_27_145511) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_125357) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -84,6 +84,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_27_145511) do
     t.string "contact"
   end
 
+  create_table "taggables", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "service_id"
+    t.index ["tag_id"], name: "index_taggables_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password"
@@ -105,5 +119,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_27_145511) do
     t.index ["service_id"], name: "index_users_on_service_id"
   end
 
+  create_table "works", force: :cascade do |t|
+    t.integer "car_id"
+    t.string "service_work"
+    t.datetime "next_appointment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "service_name"
+  end
+
+  add_foreign_key "taggables", "tags"
   add_foreign_key "users", "services"
 end

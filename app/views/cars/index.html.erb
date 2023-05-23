@@ -53,6 +53,17 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <button class="btn btn-dark nav-link" onclick="showPopup()"><%= t('.my_service') %></button>
+
+            <%#= link_to t('.spanish'), url_for(locale: "es"), class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
             <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
         </ul>
@@ -70,21 +81,33 @@
 
 
 
-  <button onclick="showPopup()"><%= t('.my_service') %></button>
 
   <div id="popup" class="popup">
     <h2><%= t('.service') %></h2>
 
     <% if @permitted_to_own_service and @service_exists%>
-    <%= link_to t('.view_my_service'), services_path, class: "btn btn-success" %>
+    <%= link_to t('.view_my_service'), service_path(@service_exists), class: "btn btn-success" %>
       <% elsif  @permitted_to_own_service and not @service_exists%>
-    <%= link_to t('.create_new_service'), new_service_path, class: "btn btn-success"%>
+    <%= link_to t('.create_new_service'), new_service_path, method: :post, class: "btn btn-success"%>
       <%else %>
       <h3><%= t('.permission') %></h3>
     <% end %>
 
     <button class="btn btn-danger" onclick="hidePopup()"><%= t('.close') %></button>
   </div>
+
+
+
+  <div>
+<!--    <h2><%#= t('.all_services') %></h2>-->
+
+    <%= link_to  t('.all_services'), services_path, class: "btn btn-accepted" %>
+
+<!--    <button class="btn btn-danger" onclick="hidePopup()"><%#= t('.close') %></button>-->
+  </div>
+
+
+
 
 
 
@@ -140,7 +163,7 @@
     </div>
 
     <% if @cars.empty? %>
-      <p class="text-center mt-5">No cars found. <%= link_to 'Create one', new_car_path %></p>
+      <p class="text-center mt-5">No cars found. <%= link_to 'Create one', new_car_path, class: "btn btn-primary" %></p>
     <% end %>
   </div>
 
@@ -155,3 +178,5 @@
   </script>
 
 <% end %>
+
+@user_id
