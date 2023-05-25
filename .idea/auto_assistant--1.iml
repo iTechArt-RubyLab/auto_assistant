@@ -57,6 +57,7 @@
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.39.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cleanup (v0.1.0, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="commontator (v7.0.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.2.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.4.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -171,6 +172,7 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket (v1.2.9, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.3.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.6.7, RVM: ruby-3.2.0) [gem]" level="application" />
   </component>
@@ -191,8 +193,6 @@
         <option value="active_record:devise" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
-        <option value="autocomplete:install" />
-        <option value="autocomplete:uncompressed" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
@@ -274,8 +274,6 @@
         <option value="active_record:devise" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
-        <option value="autocomplete:install" />
-        <option value="autocomplete:uncompressed" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
@@ -428,6 +426,30 @@
             <subtasks>
               <RakeTaskImpl description="Lookup first-level dependencies for TEMPLATE (like messages/show or comments/_comment.html)" fullCommand="cache_digests:dependencies" id="dependencies" />
               <RakeTaskImpl description="Lookup nested dependencies for TEMPLATE (like messages/show or comments/_comment.html)" fullCommand="cache_digests:nested_dependencies" id="nested_dependencies" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="commontator">
+            <subtasks>
+              <RakeTaskImpl description="Copy assets, views, mailers, helpers, controllers and models from commontator to application" fullCommand="commontator:copy" id="copy" />
+              <RakeTaskImpl id="copy">
+                <subtasks>
+                  <RakeTaskImpl description="Copy controllers from commontator to application" fullCommand="commontator:copy:controllers" id="controllers" />
+                  <RakeTaskImpl description="Copy helpers from commontator to application" fullCommand="commontator:copy:helpers" id="helpers" />
+                  <RakeTaskImpl description="Copy images from commontator to application" fullCommand="commontator:copy:images" id="images" />
+                  <RakeTaskImpl description="Copy locales from commontator to application" fullCommand="commontator:copy:locales" id="locales" />
+                  <RakeTaskImpl description="Copy mailers from commontator to application" fullCommand="commontator:copy:mailers" id="mailers" />
+                  <RakeTaskImpl description="Copy models from commontator to application" fullCommand="commontator:copy:models" id="models" />
+                  <RakeTaskImpl description="Copy stylesheets from commontator to application" fullCommand="commontator:copy:stylesheets" id="stylesheets" />
+                  <RakeTaskImpl description="Copy views from commontator to application" fullCommand="commontator:copy:views" id="views" />
+                </subtasks>
+              </RakeTaskImpl>
+              <RakeTaskImpl description="Copy initializers and migrations from commontator to application" fullCommand="commontator:install" id="install" />
+              <RakeTaskImpl id="install">
+                <subtasks>
+                  <RakeTaskImpl description="Copy initializers from commontator to application" fullCommand="commontator:install:initializers" id="initializers" />
+                  <RakeTaskImpl description="Copy migrations from commontator to application" fullCommand="commontator:install:migrations" id="migrations" />
+                </subtasks>
+              </RakeTaskImpl>
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl id="db">

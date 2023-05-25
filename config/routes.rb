@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     get 'log', on: :member
   end
   resources :logs
+  resources :services do
+    resources :comments
+  end
+
   get 'autocomplete/service_types', to: 'autocomplete#service_types', as: 'autocomplete_service_types'
   root "cars#index"
 

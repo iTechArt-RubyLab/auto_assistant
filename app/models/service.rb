@@ -1,6 +1,8 @@
 class Service < ApplicationRecord
+  acts_as_commentable
   has_many :taggables, dependent: :destroy
   has_many :tags, through: :taggables
+  has_many :comments
   has_one :user
   def oil_change(car, next_visit=1.year.since(Time.now))
     if Log.where(car_id: car.id).empty?

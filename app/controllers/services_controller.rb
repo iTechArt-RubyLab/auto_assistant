@@ -22,6 +22,9 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    @comments = @service.comments
+    @user_name = current_user.email
+
   end
 
   def edit

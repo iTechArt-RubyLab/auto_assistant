@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70f1f1c7-57c4-4fc7-8811-433e633c34cb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/auto_assistant--1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/auto_assistant--1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/services_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/services_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/works_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/works_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/service.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/services/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/services/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/services/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/services/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +41,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2O0HEZ5XxzkM31kcsoRemkMxmzW" />
   <component name="ProjectViewState">
@@ -304,6 +317,9 @@
       <workItem from="1684827992538" duration="1141000" />
       <workItem from="1684829154235" duration="3281000" />
       <workItem from="1684843657359" duration="7441000" />
+      <workItem from="1684907273438" duration="978000" />
+      <workItem from="1684922593224" duration="3198000" />
+      <workItem from="1685021232872" duration="1543000" />
     </task>
     <servers />
   </component>
@@ -334,7 +350,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/auto_assistant@auto_assistant__1.rcov" NAME="auto_assistant--1 Coverage Results" MODIFIED="1684140127497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auto_assistant--1" />
+    <SUITE FILE_PATH="coverage/auto_assistant@auto_assistant__1.rcov" NAME="auto_assistant--1 Coverage Results" MODIFIED="1684926171820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auto_assistant--1" />
     <SUITE FILE_PATH="coverage/auto_assistant@auto_assistant.rcov" NAME="auto_assistant Coverage Results" MODIFIED="1680688977739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="auto_assistant" />
   </component>
 </project>

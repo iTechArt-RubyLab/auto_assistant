@@ -32,11 +32,9 @@ gem "sidekiq"
 
 gem 'activeadmin'
 
-
-
+gem 'commontator'
 
 gem 'sass-rails'
-
 
 gem 'bootstrap'
 
