@@ -15,15 +15,23 @@
         hidePopup();
     }
 </script>
+<!--<div class="dropdown">-->
+<!--  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--    Language-->
+<!--  </button>-->
+<!--  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"></div>-->
+<!--</div>-->
 <!-- Navbar -->
 <% if @current_user_email %>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
     <div class="container">
-      <%= link_to  t('.my_car_collection') , root_path, class: 'navbar-brand' %>
+      <%= link_to t('.my_car_collection'), root_path, class: 'navbar-brand' %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      logout button
+
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
@@ -37,6 +45,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <%= link_to t('.english'), url_for(locale: "en"), class: 'nav-link' %>
+
           </li>
         </ul>
       </div>
@@ -44,7 +53,17 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+
             <%= link_to t('.spanish'), url_for(locale: "es"), class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to t('.all_services'), services_path, class: "nav-link" %>
           </li>
         </ul>
       </div>
@@ -85,11 +104,11 @@
   <div id="popup" class="popup">
     <h2><%= t('.service') %></h2>
 
-    <% if @permitted_to_own_service and @service_exists%>
-    <%= link_to t('.view_my_service'), service_path(@service_exists), class: "btn btn-success" %>
-      <% elsif  @permitted_to_own_service and not @service_exists%>
-    <%= link_to t('.create_new_service'), new_service_path, method: :post, class: "btn btn-success"%>
-      <%else %>
+    <% if @permitted_to_own_service and @service_exists %>
+      <%= link_to t('.view_my_service'), service_path(@service_exists), class: "btn btn-success" %>
+    <% elsif @permitted_to_own_service and not @service_exists %>
+      <%= link_to t('.create_new_service'), new_service_path, method: :post, class: "btn btn-success" %>
+    <% else %>
       <h3><%= t('.permission') %></h3>
     <% end %>
 
@@ -99,11 +118,10 @@
 
 
   <div>
-<!--    <h2><%#= t('.all_services') %></h2>-->
+    <!--    <h2><%#= t('.all_services') %></h2>-->
 
-    <%= link_to  t('.all_services'), services_path, class: "btn btn-accepted" %>
 
-<!--    <button class="btn btn-danger" onclick="hidePopup()"><%#= t('.close') %></button>-->
+    <!--    <button class="btn btn-danger" onclick="hidePopup()"><%#= t('.close') %></button>-->
   </div>
 
 
