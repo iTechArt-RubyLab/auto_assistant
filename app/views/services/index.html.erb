@@ -1,5 +1,4 @@
 <!--<p style="color: green"><%#= notice %></p>-->
-
 <h1 class="mb-4">Services</h1>
 <div id="services">
   <% @services.each do |service| %>
@@ -20,6 +19,12 @@
         <p class="card-text">
           <strong>Contact:</strong>
           <%= service.contact %>
+        </p>
+
+
+        <p class="card-text">
+          <strong>Rating:</strong>
+          <%= service.average_rating %>
         </p>
 
         <p class="card-text">

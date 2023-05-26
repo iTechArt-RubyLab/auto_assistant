@@ -69,10 +69,18 @@ class ServicesController < ApplicationController
 
   end
 
+  def rate
+    @service = Service.find(params[:id])
+    @service.rating = params[:rating]
+    @service.update_average_rating
+
+    redirect_to @service, notice: 'Rating submitted successfully.'
+  end
+
   private
 
   def service_params
-    params.require(:service).permit(:name, :email, :password_digest, :contact, :service_type, :tags
+    params.require(:service).permit(:name, :email, :password_digest, :contact, :service_type, :tags, :average_rating
     )
   end
 end

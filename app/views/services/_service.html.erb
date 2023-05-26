@@ -20,6 +20,11 @@
   </p>
 
   <p>
+    <strong>Rating:</strong>
+    <%= service.average_rating %>
+  </p>
+
+  <p>
     <strong>Service type:</strong>
     <% service.tags.each do |tag| %>
       <%= link_to tag, style:"text-decoration:none" do %>

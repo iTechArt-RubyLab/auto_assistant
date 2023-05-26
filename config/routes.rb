@@ -1,6 +1,9 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
+  resources :services do
+    post 'rate', on: :member
+  end
   resources :works
   resources :tags
   resources :services

@@ -28,6 +28,9 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem 'resque'
+gem 'resque-scheduler'
+gem 'actionmailer'
+
 
 gem 'resque-web'
 

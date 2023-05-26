@@ -2,6 +2,7 @@
 
 <%= render @service %>
 
+
 <h2>Comments</h2>
 <% if @comments.any? %>
   <% @comments.each do |comment| %>
@@ -17,6 +18,11 @@
 
 <h2>Add a new comment</h2>
 <%= render partial: "comments/form", locals: { service: @service } %>
+
+<%= form_tag(rate_service_path(@service), method: :post) do %>
+  <%= select_tag :rating, options_for_select([1, 2, 3, 4, 5]), prompt: 'Select rating' %>
+  <%= submit_tag 'Rate' %>
+<% end %>
 
 <div>
   <%= link_to "Edit this service", edit_service_path(@service), class: "btn btn-warning" %> |

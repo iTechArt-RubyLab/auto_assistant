@@ -14,14 +14,14 @@ class WorksController < InheritedResources::Base
       log.water_removal = nil
       if field_value in log:
         new_value = params[:work][:next_appointment]
-        log.water_removal = 1.year.from_now
-        # p log[field_value] + "68686868686958"
-        # log.params[:work][:service_work] = params[:work][:next_appointment]
+        log[field_value] = new_value
 
         # log.water_removal = params[:work][:next_appointment]
 
         if @work.save
           log.save
+          user_id = current_user.id
+          Resque.enqueue(NotificationJob, user_id, @work.id)
         end
       else
         @work.save
