@@ -10,14 +10,23 @@ class WorksController < InheritedResources::Base
     car = Car.find(params[:work][:car_id])
     if car.log
       log = car.log
-      # log.params[:work][:service_work] = params[:work][:next_appointment]
-      log.water_removal = params[:work][:next_appointment]
+      field_value = params[:work][:service_work]
+      log.water_removal = nil
+      if field_value in log:
+        new_value = params[:work][:next_appointment]
+        log[field_value] = new_value
 
-      if @work.save
-        log.save
+        # log.water_removal = params[:work][:next_appointment]
+
+        if @work.save
+          log.save
+          user_id = current_user.id
+          Resque.enqueue(NotificationJob, user_id, @work.id)
+        end
+      else
+        @work.save
       end
-    else
-      @work.save
+
     end
     super
   end

@@ -1,6 +1,9 @@
 class Service < ApplicationRecord
+  acts_as_commentable
+  validates :rating, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
   has_many :taggables, dependent: :destroy
   has_many :tags, through: :taggables
+  has_many :comments
   has_one :user
   def oil_change(car, next_visit=1.year.since(Time.now))
     if Log.where(car_id: car.id).empty?
@@ -80,6 +83,11 @@ class Service < ApplicationRecord
       Work.create(car_id: car.id,service_work: "inspection", next_appointment: next_visit)
     end
 
+  end
+
+  def update_average_rating
+    self.average_rating = Service.where.not(rating: nil).average(:rating).to_f.round(2)
+    save
   end
 
 
