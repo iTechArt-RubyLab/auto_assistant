@@ -5,17 +5,17 @@
   <% @services.each do |service| %>
     <div id="<%= dom_id service %>" class="service card border-primary mb-4">
       <div class="card-body custom-card-body">
-        <h5 class="card-title">Name: <%= service.name %></h5>
+        <h5 class="card-title">Name: <%= link_to service.name, service_path(service) %></h5>
 
         <p class="card-text">
           <strong>Email:</strong>
           <%= service.email %>
         </p>
 
-        <p class="card-text">
-          <strong>Password digest:</strong>
-          <%= service.password_digest %>
-        </p>
+<!--        <p class="card-text">-->
+<!--          <strong>Password digest:</strong>-->
+          <%#= service.password_digest %>
+<!--        </p>-->
 
         <p class="card-text">
           <strong>Contact:</strong>

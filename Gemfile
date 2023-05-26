@@ -27,8 +27,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'resque'
 
-gem "sidekiq"
+gem 'resque-web'
 
 gem 'activeadmin'
 
@@ -53,7 +54,6 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-
 gem 'devise'
 
 gem "omniauth"
@@ -70,11 +70,7 @@ gem 'cleanup'
 
 gem 'simple_form'
 
-
 gem 'pundit'
-
-
-
 
 group :development, :test do
   gem 'rspec-rails', '~> 6.0.0'
@@ -88,9 +84,6 @@ group :development do
   gem "web-console"
 
   gem "mailcatcher"
-
-
-
 
 end
 
