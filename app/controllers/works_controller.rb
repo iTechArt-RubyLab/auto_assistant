@@ -10,13 +10,13 @@ class WorksController < InheritedResources::Base
     car = Car.find(params[:work][:car_id])
     if car.log
       log = car.log
-      field_value = params[:work][:service_work]
-      log.water_removal = nil
-      if field_value in log:
-        new_value = params[:work][:next_appointment]
+      field_value = params[:work][:service_work].gsub(/\s+/, "")
+      if log.respond_to?(field_value)
+        # new_value = params[:work][:next_appointment]
+        new_value = 1.year.from_now
         log[field_value] = new_value
 
-        # log.water_removal = params[:work][:next_appointment]
+
 
         if @work.save
           log.save
