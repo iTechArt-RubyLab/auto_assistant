@@ -34,7 +34,7 @@ class LogsController < ApplicationController
   def update
     respond_to do |format|
       if @log.update(log_params)
-        LogJob.enqueue(current_user.id)
+        Resque.enqueue(LogJob, current_user.id)
 
         format.html { redirect_to log_url(@log), notice: "Log was successfully updated." }
         format.json { render :show, status: :ok, location: @log }
