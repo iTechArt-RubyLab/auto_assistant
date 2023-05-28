@@ -1,4 +1,4 @@
-class UserMailer < ActionMailer::Base
+class UserMailer < ApplicationMailer
   default from: 'auto_assistant@auto.com'
 
   def notification_email(user, work)
