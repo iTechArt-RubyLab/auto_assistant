@@ -3,21 +3,11 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
-    # @type_of_works = []
-    # service_objects = Service.all
-    #
-    # service_objects.each do |service|
-    #   @type_of_works << []
-    #   service.tags.each do |tag|
-    #     if
-    #
-    #   end
-    # end
-
   end
 
   def new
     @service = Service.new
+
   end
 
   def show

@@ -2,8 +2,6 @@ class CarsController < InheritedResources::Base
   def new
     @car = Car.new
     @user_id = current_user.id
-    Resque.enqueue(MyWorkerJob)
-
     super
   end
 
