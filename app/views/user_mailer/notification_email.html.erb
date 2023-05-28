@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+<h1>Notification Email</h1>
+<p>Dear <%= @user.email %>,</p>
+<p>It's just 1 day left before your next appointment.</p>
+<p>Work details:</p>
+<ul>
+  <li><strong>Title:</strong> <%= @work.service_work %></li>
+  <li><strong>Description:</strong> <%= @work.service_name %></li>
+  <!-- Include other work details as needed -->
+</ul>
+<p>Thank you for using our service.</p>
+</body>
+</html>

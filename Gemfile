@@ -76,7 +76,6 @@ gem 'simple_form'
 gem 'pundit'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 6.0.0'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
@@ -91,6 +90,9 @@ group :development do
 end
 
 group :test do
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
