@@ -1,4 +1,12 @@
 class WorksController < InheritedResources::Base
+
+  def index
+    @works = Work.all
+    @works = @works.where(car_id: params[:car_id]) if params[:car_id].present?
+    @works = @works.where("service_name ILIKE ?", "%#{params[:service_name]}%") if params[:service_name].present?
+    super
+  end
+
   def new
     @user_cars = current_user.cars
     @work = Work.new
