@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     redirect_to service_path(@service), notice: "Comment was successfully destroyed."
   end
 
-  private
+
 
   private
 

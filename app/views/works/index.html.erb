@@ -2,6 +2,21 @@
 
 <h1>Works</h1>
 
+<%= form_tag works_path, method: :get, class: "filter-form" do %>
+  <div class="field">
+    <%= label_tag :car_id, "Car ID" %>
+    <%= select_tag :car_id, options_from_collection_for_select(Car.all, :id, :make, params[:car_id]), prompt: "Select Car" %>
+  </div>
+  <div class="field">
+    <%= label_tag :service_name, "Service Name" %>
+    <%= text_field_tag :service_name, params[:service_name], placeholder: "Enter Service Name" %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Filter" %>
+    <%= link_to "Clear Filters", works_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>
+
 <div id="works">
   <% @works.each do |work| %>
     <%= render work %>
