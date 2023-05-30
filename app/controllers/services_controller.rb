@@ -3,25 +3,18 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
-    # @type_of_works = []
-    # service_objects = Service.all
-    #
-    # service_objects.each do |service|
-    #   @type_of_works << []
-    #   service.tags.each do |tag|
-    #     if
-    #
-    #   end
-    # end
-
   end
 
   def new
     @service = Service.new
+
   end
 
   def show
     @service = Service.find(params[:id])
+    @comments = @service.comments
+    @user_name = current_user.email
+
   end
 
   def edit
@@ -66,10 +59,18 @@ class ServicesController < ApplicationController
 
   end
 
+  def rate
+    @service = Service.find(params[:id])
+    @service.rating = params[:rating]
+    @service.update_average_rating
+
+    redirect_to @service, notice: 'Rating submitted successfully.'
+  end
+
   private
 
   def service_params
-    params.require(:service).permit(:name, :email, :password_digest, :contact, :service_type, :tags
+    params.require(:service).permit(:name, :email, :password_digest, :contact, :service_type, :tags, :average_rating
     )
   end
 end

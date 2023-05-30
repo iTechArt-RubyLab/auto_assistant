@@ -1,4 +1,4 @@
-<div id="<%= dom_id service %>">
+<div id="<%= dom_id service %>" style="color: yellow">
   <p>
     <strong>Name:</strong>
     <%= service.name %>
@@ -17,6 +17,11 @@
   <p>
     <strong>Contact:</strong>
     <%= service.contact %>
+  </p>
+
+  <p>
+    <strong>Rating:</strong>
+    <%= service.average_rating %>
   </p>
 
   <p>

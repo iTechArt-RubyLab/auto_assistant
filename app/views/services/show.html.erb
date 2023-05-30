@@ -1,10 +1,36 @@
-<p style="color: green"><%= notice %></p>
+<!-- Add Bootstrap CSS classes to the notice -->
+<!--<p class="alert alert-success"><%#= notice %></p>-->
 
+<!-- Render the @service -->
 <%= render @service %>
+
+<h2>Comments</h2>
+<% if @comments.any? %>
+  <% @comments.each do |comment| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><strong><%= comment.user_name %></strong></h5>
+        <p class="card-text"><%= comment.body %></p>
+        <%= button_to "Destroy this comment", service_comment_path(@service, comment), method: :delete, class: "btn btn-danger", form: { data: { turbo_confirm: "Are you sure?" } } %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p>No comments found.</p>
+<% end %>
+
+<h3>Add a new comment</h3>
+<%= render partial: "comments/form", locals: { service: @service } %>
+
+<%= form_tag(rate_service_path(@service), method: :post) do %>
+  <div class="form-group">
+    <%= label_tag :rating, "Rating" %>
+    <%= select_tag :rating, options_for_select([1, 2, 3, 4, 5]), prompt: 'Select rating', class: "form-control" %>
+  </div>
+  <%= submit_tag 'Rate', class: "btn btn-primary" %>
+<% end %>
 
 <div>
   <%= link_to "Edit this service", edit_service_path(@service), class: "btn btn-warning" %> |
   <%= link_to "Back to my cars", cars_path, class: "btn btn-info" %>
-
-  <%#= button_to "Destroy this service", @service, method: :delete %>
 </div>

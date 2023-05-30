@@ -86,14 +86,17 @@
   color: #fff;
 }
 body {
-  background: linear-gradient(to right, #56ab2f, #a8e063);
+  color: #ff9f00;
+  background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/10/cool-website-background-01.jpg");
 }
 
 .custom-card-body{
-  background: #fff200;
+  background: green;
 }
 
-
+.car-body-text-color{
+  color: black;
+}
 
 /* Path: app/assets/stylesheets/application.scss */
 

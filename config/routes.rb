@@ -1,4 +1,9 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
+  resources :services do
+    post 'rate', on: :member
+  end
   resources :works
   resources :tags
   resources :services
@@ -23,6 +28,12 @@ Rails.application.routes.draw do
     get 'log', on: :member
   end
   resources :logs
+  resources :services do
+    resources :comments
+  end
+
+  mount Resque::Server.new, :at => "/resque"
+
   get 'autocomplete/service_types', to: 'autocomplete#service_types', as: 'autocomplete_service_types'
   root "cars#index"
 
