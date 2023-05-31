@@ -1,0 +1,53 @@
+
+
+<%= form_with(model: service) do |form| %>
+  <% if service.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+        <% service.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :password_digest, style: "display: block" %>
+    <%= form.text_field :password_digest %>
+  </div>
+
+  <div>
+    <%= form.label :contact, style: "display: block" %>
+    <%= form.text_field :contact %>
+  </div>
+
+<!--  <div>-->
+    <%#= form.text_field :service_type_list, id: 'service_type', data: { autocomplete_source: autocomplete_service_types_path } %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :service_type %>
+    <%#= form.text_field :service_type_list, id: 'service_type_list', data: { delimiter: ',' } %>
+<!--  </div>-->
+  <div>
+    <%= form.label :tag, style: "display: block"  %>
+    <%= form.text_field :tags, value: service.tags.map(&:name).join(",") %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

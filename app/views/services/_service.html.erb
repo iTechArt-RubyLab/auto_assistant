@@ -1,0 +1,36 @@
+<div id="<%= dom_id service %>" style="color: yellow">
+  <p>
+    <strong>Name:</strong>
+    <%= service.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= service.email %>
+  </p>
+
+  <p>
+    <strong>Password digest:</strong>
+    <%= service.password_digest %>
+  </p>
+
+  <p>
+    <strong>Contact:</strong>
+    <%= service.contact %>
+  </p>
+
+  <p>
+    <strong>Rating:</strong>
+    <%= service.average_rating %>
+  </p>
+
+  <p>
+    <strong>Service type:</strong>
+    <% service.tags.each do |tag| %>
+      <%= link_to tag, style:"text-decoration:none" do %>
+        <span class="tag"><%= tag.name.capitalize.gsub!('_', '   ') %></span>
+      <% end %>
+    <% end %>
+  </p>
+
+</div>

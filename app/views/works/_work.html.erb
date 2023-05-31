@@ -1,0 +1,21 @@
+<div id="<%= dom_id work %>" class="card">
+  <div class="card-body">
+    <h5 class="card-title">Service name</h5>
+    <p class="card-text"><%= work.service_name %></p>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong>Choose car:</strong>
+      <%= work.car_id %>
+    </li>
+    <li class="list-group-item">
+      <strong>Service work:</strong>
+      <%= work.service_work %>
+    </li>
+    <li class="list-group-item">
+      <strong>Next appointment:</strong>
+      <%= work.next_appointment %>
+    </li>
+  </ul>
+</div>

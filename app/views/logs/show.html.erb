@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @log %>
+
+<div>
+
+  <%= link_to "Edit this log", edit_log_path(@log), class: "btn btn-primary" %>
+  <%= link_to "Back to main page", cars_path, class: "btn btn-primary" %>
+  <%= button_to "Destroy this log", @log, method: :delete, class: "btn btn-danger" %>
+</div>
